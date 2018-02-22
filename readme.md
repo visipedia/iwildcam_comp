@@ -33,7 +33,7 @@ Participants are allowed to collect additional annotations (e.g. bounding boxes,
 
 
 ## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training images has a `category_id` that is either `1` indicating no animal present or `0` indicating animal present. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training images has a `category_id` that is either `0` indicating no animal present or `1` indicating animal present. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
   "info" : info,
@@ -75,12 +75,12 @@ annotation{
 
 The submission format for the competition is a csv file with the following format:
 ```
-id,animal_not_present_score
+id,animal_present_score
 7b641084-7d68-11e7-884d-7845c41c2c67,0.875
 bcc7b4db-7d71-11e7-884d-7845c41c2c67,0.231
 ...
 ```
-The `id` column corresponds to the test image id. The `animal_not_present_score` column corresponds a score indicating that an animal is not present. Higher values indicate that the image is more likely to be empty i.e. to not contain an animal.
+The `id` column corresponds to the test image id. The `animal_present_score` column corresponds a score indicating that an animal is present in the image. Higher values indicate that the image is more likely to contain an animal.
 
 
 ## Terms of Use
