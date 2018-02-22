@@ -97,15 +97,15 @@ By downloading this dataset you agree to the following terms:
 
 Download the dataset files here:
   * Training and validation images [59.1GB]()
-    * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
+    * Running `md5sum train_val.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
   * Test images [75.7GB]()
-    * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
+    * Running `md5sum test.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
   * Train annotations [46.9MB]()
-    * Running `md5sum train_annotations.json` should produce `75d54d0cdd8ece5cd0870dbd4e5413d4`
+    * Running `md5sum train_annotations.json` should produce `07cb99694bd805254525807fcc606042`
   * Validation annotations [5.6MB]()
-    * Running `md5sum val_annotations.json` should produce `978fb7b451d46d1bc668baaa16039dfe`
+    * Running `md5sum val_annotations.json` should produce `c3296329534891cbe6d8eff0f8adb6e4`
   * Test annotations [23.9MB]()
-    * Running `md5sum test_information.json` should produce `92ff57caec6626e7d9dc3056180084db`
+    * Running `md5sum test_information.json` should produce `c36df4d8e70a6136994ec9bd270befce`
       
       
 
