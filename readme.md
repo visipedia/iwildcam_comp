@@ -1,4 +1,4 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam.jpg)
+![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam3.jpg)
 
 # iWildCam 2018 Competition
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Unfortunately, a large number of the images that end up being captured tend to be false positives. This is typically caused by non-animal motion in the scene e.g. the wind moving trees. 
