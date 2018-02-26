@@ -3,7 +3,7 @@
 # iWildCam 2018 Competition
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Unfortunately, a large number of the images that end up being captured tend to be false positives. This is typically caused by non-animal motion in the scene e.g. the wind moving trees. 
 
-The goal of this competition is to predict if an image contains an animal or not in images from a diverse set of locations that have been captured both during the day and at night. The main challenge is generalizing to camera trap locations that are not present at training time. 
+The goal of this competition is to predict if images from a diverse set of unseen locations that have been captured both during the day and at night contain an animal. The main challenge is generalizing to camera trap locations that are not present in the training set. Another challenge is that some images contain other objects (e.g. people or vehicles) that can trigger the cameras but are not of interest. 
 
 This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
@@ -20,9 +20,9 @@ Submission Deadline|June, 2018|
 
 ## Details and Evaluation
 
-There are a total 149,359 training images from 70 different camera locations and 17,784 validation images from a mix of locations in the training set and 5 new locations. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id is given for all images.
+There are a total 149,359 training images from 70 different camera locations and 17,784 validation images from a mix of locations in the training set and 5 new locations. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images.
 
-The evaluation metric is the area under the ROC curve computed from the continuous score that indicates if a given test image has no animals present in it.
+The evaluation metric is the area under the ROC curve computed from a predicted continuous value that indicates if a given test image contains an animal. Higher values indicate that an image is more likely to contain an animal. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.  
 
 
 ## Guidelines
