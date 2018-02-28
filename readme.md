@@ -96,17 +96,18 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * Training and validation images [59.1GB]()
-    * Running `md5sum train_val.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
-  * Test images [75.7GB]()
-    * Running `md5sum test.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
-  * Train annotations [46.9MB]()
-    * Running `md5sum train_annotations.json` should produce `07cb99694bd805254525807fcc606042`
-  * Validation annotations [5.6MB]()
-    * Running `md5sum val_annotations.json` should produce `c3296329534891cbe6d8eff0f8adb6e4`
-  * Test annotations [23.9MB]()
-    * Running `md5sum test_information.json` should produce `c36df4d8e70a6136994ec9bd270befce`
-      
+  * Training and validation images [75.7GB]()
+    * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
+  * Test images [59.1GB]()
+    * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
+  * Train and validation annotations, and test information [XXXMB]()
+    * Running `md5sum annotations.tar.gz` should produce `XXX`
+
+We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:      
+  * Smaller training and validation images [23.2GB]()
+    * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
+  * Smaller test images [17.9GB]()
+    * Running `md5sum test.tar.gz` should produce `3628bfed32e9c1666002899d66d5def9`
       
 
 ### Acknowledgements
