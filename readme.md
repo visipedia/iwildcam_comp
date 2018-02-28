@@ -20,9 +20,9 @@ Submission Deadline|June, 2018|
 
 ## Details and Evaluation
 
-There are a total 149,359 training images from 70 different camera locations and 17,784 validation images from a mix of locations in the training set and 5 new locations. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images.
+There are a total 149,359 training images from 70 different camera locations and 17,784 validation images from a mix of locations in the training set and 5 new locations. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.
 
-The evaluation metric is the area under the ROC curve computed from a predicted continuous value that indicates if a given test image contains an animal. Higher values indicate that an image is more likely to contain an animal. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.  
+The evaluation metric is overall accuracy i.e. correctly predicting which of the test images contain animals.
 
 
 ## Guidelines
@@ -75,12 +75,12 @@ annotation{
 
 The submission format for the competition is a csv file with the following format:
 ```
-id,animal_present_score
-7b641084-7d68-11e7-884d-7845c41c2c67,0.875
-bcc7b4db-7d71-11e7-884d-7845c41c2c67,0.231
+id,animal_present
+7b641084-7d68-11e7-884d-7845c41c2c67,1
+bcc7b4db-7d71-11e7-884d-7845c41c2c67,0
 ...
 ```
-The `id` column corresponds to the test image id. The `animal_present_score` column corresponds a score indicating that an animal is present in the image. Higher values indicate that the image is more likely to contain an animal.
+The `id` column corresponds to the test image id. The `animal_present` is a binary value that indicates if an animal is predicted to be present in the image.
 
 
 ## Terms of Use
