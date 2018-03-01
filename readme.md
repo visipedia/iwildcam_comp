@@ -96,17 +96,17 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * Training and validation images [75.7GB]()
+  * Training and validation images [75.7GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val.tar.gz)
     * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
-  * Test images [59.1GB]()
+  * Test images [59.1GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz)
     * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
   * Train and validation annotations, and test information [XXXMB]()
     * Running `md5sum annotations.tar.gz` should produce `XXX`
 
 We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:      
-  * Smaller training and validation images [23.2GB]()
+  * Smaller training and validation images [23.2GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val_sm.tar.gz)
     * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
-  * Smaller test images [17.9GB]()
+  * Smaller test images [17.9GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test_sm.tar.gz)
     * Running `md5sum test.tar.gz` should produce `3628bfed32e9c1666002899d66d5def9`
       
 
