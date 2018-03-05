@@ -13,14 +13,13 @@ This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.goog
 ## Dates
 |||
 |------|---------------|
-Data Released|February, 2018|
-Submission Server Open |March, 2018|
-Submission Deadline|June, 2018|
+Competition Starts |March, 2018|
+Submission Deadline|June 4th, 2018|
 
 
 ## Details and Evaluation
 
-There are a total 149,359 training images from 70 different camera locations and 17,784 validation images from a mix of locations in the training set and 5 new locations. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.
+There are a total 150,735 training images from 65 different camera locations and 16,408 validation images 10 new locations not seen at trainging time. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.
 
 The evaluation metric is overall accuracy i.e. correctly predicting which of the test images contain animals.
 
@@ -96,23 +95,45 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * Training and validation images [75.7GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val.tar.gz)
-    * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
-  * Test images [59.1GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz)
+  * Training and validation images 75.7GB
+      * Links for different parts of the world:
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val.tar.gz) slow
+      * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
+  * Test images 59.1GB
+     * Links for different parts of the world:
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/test.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz) slow
     * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
-  * Train and validation annotations, and test information [XXXMB]()
-    * Running `md5sum annotations.tar.gz` should produce `XXX`
+  * Train and validation annotations, and test information 4.8MB
+     * Links for different parts of the world:
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/annotations.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/annotations.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/annotations.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/annotations.tar.gz) slow
+    * Running `md5sum annotations.tar.gz` should produce `0857766209a45f3c4ce315f295b34464`
 
-We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:      
-  * Smaller training and validation images [23.2GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val_sm.tar.gz)
-    * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
-  * Smaller test images [17.9GB](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test_sm.tar.gz)
+We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
+  * Smaller training and validation images 23.2GB
+      * Links for different parts of the world:
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val_sm.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val_sm.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val_sm.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val_sm.tar.gz) slow
+      * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
+  * Smaller test images 17.9GB
+     * Links for different parts of the world:
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/test.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz) slow
     * Running `md5sum test.tar.gz` should produce `3628bfed32e9c1666002899d66d5def9`
-      
+    
 
 ### Acknowledgements
 
 Data is primarily provided by Erin Boydston (USGS) and Justin Brown (NPS).
-
-
-
