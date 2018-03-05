@@ -19,7 +19,7 @@ Submission Deadline|June 4th, 2018|
 
 ## Details and Evaluation
 
-There are a total 150,735 training images from 65 different camera locations and 16,408 validation images from 10 new locations not seen at trainging time. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.
+There are a total 150,735 training images from 65 different camera locations and 16,408 validation images from 10 new locations not seen at training time. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted each image.
 
 The evaluation metric is overall accuracy i.e. correctly predicting which of the test images contain animals.
 
