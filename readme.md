@@ -111,7 +111,7 @@ Download the dataset files here:
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
         * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz) slow
     * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
-  * Train and validation annotations 3.8MB [Test Information Coming Soon!]
+  * Train and validation annotations 3.8MB [Coming Soon!]
      * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/annotations_train.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/annotations_train.tar.gz)
