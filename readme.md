@@ -104,20 +104,20 @@ Download the dataset files here:
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val.tar.gz)
         * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val.tar.gz) slow
       * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
-  * Test images 59.1GB
+  * Test images 59.1GB [Coming Soon!]
      * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/test.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
         * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz) slow
     * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
-  * Train and validation annotations, and test information 4.8MB
+  * Train and validation annotations 3.8MB [Test Information Coming Soon!]
      * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/annotations.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/annotations.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/annotations.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/annotations.tar.gz) slow
-    * Running `md5sum annotations.tar.gz` should produce `0857766209a45f3c4ce315f295b34464`
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/annotations_train.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/annotations_train.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/annotations_train.tar.gz)
+        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/annotations_train.tar.gz) slow
+    * Running `md5sum annotations_train.tar.gz` should produce `e2f7aaa16f5fab46fb8275d7075e06c7`
 
 We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
   * Smaller training and validation images 23.2GB
@@ -127,7 +127,7 @@ We also provide a smaller version of the dataset where the image width is resize
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val_sm.tar.gz)
         * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val_sm.tar.gz) slow
       * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
-  * Smaller test images 17.9GB
+  * Smaller test images 17.9GB [Coming Soon!]
      * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/test_sm.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test_sm.tar.gz)
