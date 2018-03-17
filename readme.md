@@ -114,7 +114,7 @@ Download the dataset files here:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/iwildcam2018_annotations.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/iwildcam2018_annotations.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/iwildcam2018_annotations.tar.gz)
-    * Running `md5sum annotations_train.tar.gz` should produce `62437e267340c0a0ccc801eb9a041564`
+    * Running `md5sum iwildcam2018_annotations.tar.gz` should produce `62437e267340c0a0ccc801eb9a041564`
 
 We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
   * Smaller training and validation images 20.23GB
