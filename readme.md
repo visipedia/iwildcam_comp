@@ -3,7 +3,7 @@
 # iWildCam 2018 Competition
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Unfortunately, a large number of the images that end up being captured tend to be false positives. This is typically caused by non-animal motion in the scene e.g. the wind moving trees. 
 
-The goal of this competition is to predict if images from a diverse set of unseen locations that have been captured both during the day and at night contain an animal. The main challenge is generalizing to camera trap locations that are not present in the training set. Another challenge is that some images contain other objects (e.g. people or vehicles) that can trigger the cameras but are not of interest. 
+The goal of this competition is to predict if images from a diverse set of unseen locations that have been captured both during the day and at night contain an animal. The main challenge is generalizing to camera trap locations that are not present in the training set and large variations in appearance in the same location over time. Another challenge is that some images contain other objects (e.g. people or vehicles) that can trigger the cameras but are not of interest. 
 
 This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
@@ -21,14 +21,14 @@ Submission Deadline|June 4th, 2018|
 
 ## Details and Evaluation
 
-There are a total 150,735 training images from 65 different camera locations and 16,408 validation images from 10 new locations not seen at training time. The test set contains 125,589 images from 68 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. A subset of the images come from short sequences of up to 3 images. We do not provide this meta data but it can be extracted from each image.
+There are a total 106,428 training images from 65 different camera locations and 12,719 validation images from 10 new locations not seen at training time. The test set contains 124,040 images from 65 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. 
 
 The evaluation metric is overall accuracy i.e. correctly predicting which of the test images contain animals.
 
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training and validation images for training models to classify the test images. We do not want participants crawling the web in search of additional data. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data used for training when uploading results.
+The general rule is that participants should only use the provided training and validation images for training models to classify the test images. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data used for training when uploading results.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
 
@@ -77,8 +77,8 @@ annotation{
 The submission format for the competition is a csv file with the following format:
 ```
 id,animal_present
-7b641084-7d68-11e7-884d-7845c41c2c67,1
-bcc7b4db-7d71-11e7-884d-7845c41c2c67,0
+58857ccf-23d2-11e8-a6a3-ec086b02610b,1
+591e4006-23d2-11e8-a6a3-ec086b02610b,0
 ...
 ```
 The `id` column corresponds to the test image id. The `animal_present` is a binary value that indicates if an animal is predicted to be present in the image.
@@ -94,46 +94,41 @@ By downloading this dataset you agree to the following terms:
 4. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
 
-## Data - [Coming Soon!]
+## Data
 
 Download the dataset files here:
-  * Training and validation images 75.7GB
+  * Training and validation images 50.43GB zipped  
       * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val.tar.gz) slow
-      * Running `md5sum train_val.tar.gz` should produce `1f97427c1ea5e46655b7faf8c18e8169`
-  * Test images 59.1GB
+      * Running `md5sum train_val.tar.gz` should produce `7dcbbee870c407c69fd6012e5f3dd16c`
+  * Test images 52.52GB zipped  
      * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/test.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test.tar.gz) slow
-    * Running `md5sum test.tar.gz` should produce `dce9f4ea2dac9ce87bfecbe1935610aa`
-  * Train and validation annotations 3.8MB
+    * Running `md5sum test.tar.gz` should produce `22423c6896b536b93e95334b544c4c0a`
+  * Train and validation annotations 3.65MB
      * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/annotations_train.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/annotations_train.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/annotations_train.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/annotations_train.tar.gz) slow
-    * Running `md5sum annotations_train.tar.gz` should produce `e2f7aaa16f5fab46fb8275d7075e06c7`
+        * [North America](https://storage.googleapis.com/iwildcam_2018_us/iwildcam2018_annotations.tar.gz)
+        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/iwildcam2018_annotations.tar.gz)
+        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/iwildcam2018_annotations.tar.gz)
+    * Running `md5sum annotations_train.tar.gz` should produce `62437e267340c0a0ccc801eb9a041564`
 
 We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
-  * Smaller training and validation images 23.2GB
+  * Smaller training and validation images 20.23GB
       * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val_sm.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val_sm.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val_sm.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/train_val_sm.tar.gz) slow
-      * Running `md5sum train_val.tar.gz` should produce `7216b6b6b1ef3c4b59980c398400869d`
-  * Smaller test images 17.9GB
+      * Running `md5sum train_val.tar.gz` should produce `6d0b494a4c115f833aac2850567d1da9`
+  * Smaller test images 21.02GB
      * Links for different parts of the world:
         * [North America](https://storage.googleapis.com/iwildcam_2018_us/test_sm.tar.gz)
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test_sm.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test_sm.tar.gz)
-        * [Posterity Link](http://www.vision.caltech.edu/~sbeery/datasets/iwildcam18/test_sm.tar.gz) slow
-    * Running `md5sum test.tar.gz` should produce `3628bfed32e9c1666002899d66d5def9`
+    * Running `md5sum test.tar.gz` should produce `9a6257a3ac7d298ef5bdc324a3e0efc5`
     
 
 ### Acknowledgements
