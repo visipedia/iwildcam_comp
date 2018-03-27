@@ -141,7 +141,7 @@ Images can be poorly illuminated, especially at night.  The example below contai
 Motion Blur:
 The shutter speed of the camera is not fast enough to eliminate motion blur, so animals are sometimes blurry. The example contains a blurred coyote.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/blur.png)
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/blur.jpg)
 
 Small ROI:
 Some animals are small or far from the camera, and can be difficult to spot even for humans.  The example image has a mouse on a brance to the center right of the frame.
@@ -168,6 +168,9 @@ Sometimes the camera malfunctions, causing strange discolorations.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/malfunctions.png)
 
+At any given location, the background changes over time as the seasons change.  Below, you can see a single loction at three different points in time.
+
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/changesovertime.png)
 ### Acknowledgements
 
 Data is primarily provided by Erin Boydston (USGS) and Justin Brown (NPS).
