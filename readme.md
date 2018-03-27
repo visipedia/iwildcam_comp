@@ -170,7 +170,7 @@ Sometimes the camera malfunctions, causing strange discolorations.
 
 At any given location, the background changes over time as the seasons change.  Below, you can see a single loction at three different points in time.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/changesovertime.jpg)
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/changesovertime.png)
 
 Also, the non-animal images vary based on location.  Some locations contain lots of vegetation, which can cause false triggers as it moves in the wind.  Others are near roadways, so can be triggered by cars or bikers.  
 
