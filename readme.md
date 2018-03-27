@@ -134,7 +134,7 @@ We also provide a smaller version of the dataset where the image width is resize
 Camera trap data provides several challenges that can make it difficult to get good results.  
 
 Illumination:
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/illumination.jpg)
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/illumination.png)
 
 ### Acknowledgements
 
