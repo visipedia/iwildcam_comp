@@ -133,46 +133,49 @@ We also provide a smaller version of the dataset where the image width is resize
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
 
-Illumination:
+### Illumination:
 Images can be poorly illuminated, especially at night.  The example below contains a skunk to the center left of the frame.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/illumination.png)
 
-Motion Blur:
+### Motion Blur:
 The shutter speed of the camera is not fast enough to eliminate motion blur, so animals are sometimes blurry. The example contains a blurred coyote.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/blur.jpg)
 
-Small ROI:
+### Small ROI:
 Some animals are small or far from the camera, and can be difficult to spot even for humans.  The example image has a mouse on a brance to the center right of the frame.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/smallroi.png)
 
-Occlusion:
+### Occlusion:
 Animals can be occluded by vegetation or the edge of the frame.  This example shows a location where weeds grew in front of the camera, obscuring the view.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/occlusion.png)
 
-Perspective:
+### Perspective:
 Sometimes animals come very close to the camera, causing a forced perspective.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/perspective.png)
 
-Weather Conditions:
+### Weather Conditions:
 Poor weather, including rain or dust, can obstruct the lens and cause false triggers.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/weather.png)
 
-Camera Malfunctions:
+### Camera Malfunctions:
 Sometimes the camera malfunctions, causing strange discolorations.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/malfunctions.png)
+
+### Temporal Changes: 
 
 At any given location, the background changes over time as the seasons change.  Below, you can see a single loction at three different points in time.
 
 ![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/changesovertime.png)
 
-Also, the non-animal images vary based on location.  Some locations contain lots of vegetation, which can cause false triggers as it moves in the wind.  Others are near roadways, so can be triggered by cars or bikers.  
+### Variability in false triggers:
+What causes the non-animal images to trigger varies based on location.  Some locations contain lots of vegetation, which can cause false triggers as it moves in the wind.  Others are near roadways, so can be triggered by cars or bikers.  
 
 ### Acknowledgements
 
