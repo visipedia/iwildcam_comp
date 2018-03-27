@@ -129,7 +129,12 @@ We also provide a smaller version of the dataset where the image width is resize
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test_sm.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test_sm.tar.gz)
     * Running `md5sum test.tar.gz` should produce `9a6257a3ac7d298ef5bdc324a3e0efc5`
-    
+ 
+## Data Challenges
+Camera trap data provides several challenges that can make it difficult to get good results.  
+
+Illumination:
+https://rawgit.com/visipedia/iwildcam_comp/master/assets/illumination.jpg
 
 ### Acknowledgements
 
