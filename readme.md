@@ -131,7 +131,7 @@ We also provide a smaller version of the dataset where the image width is resize
     * Running `md5sum test.tar.gz` should produce `9a6257a3ac7d298ef5bdc324a3e0efc5`
  
 ## Data Challenges
-Camera trap data provides several challenges that can make it difficult to get good results.  
+Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
 
 Illumination:
 Images can be poorly illuminated, especially at night.  The example below contains a skunk to the center left of the frame.
