@@ -7,6 +7,8 @@ The goal of this competition is to predict if images from a diverse set of unsee
 
 This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
+**ADDITIONAL ANNOTATIONS HAVE BEEN RELEASED!**  Access them [here](https://beerys.github.io/CaltechCameraTraps/)
+
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/iwildcam2018).
