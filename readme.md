@@ -1,9 +1,9 @@
 ![Banner](https://rawgit.com/visipedia/iwildcam_comp/sara/assets/iwildcam_2019_banner.jpg)
 
 # iWildCam 2019 Competition
-Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species.  We have recently been making strides towards automating the species classification challenge in camera traps, but as we try to globalize we are faced with an interesting open-set probem: how do you classify a species in a new region that you may not have seen in previous areas?
+Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species.  We have recently been making strides towards automating the species classification challenge in camera traps, but as we try to expand the scope of these models from specific regions where we have collected training data to nearby areas we are faced with an interesting probem: how do you classify a species in a new region that you may not have seen in previous training data?
 
-In order to tackle this problem, we have prepared an open-set challenge where the training data and test data are from different regions, namely The American Southwest and the American Northwest.  The species seen in each region overlap, but are not identical, and the challenge is to classify the test species correctly.  To this end, we will allow training on our American Southwest data (from [CaltechCameraTraps](https://beerys.github.io/CaltechCameraTraps/)), on iNaturalist 2017/2018 data, and on simulated data generated from [Microsoft AirSim](https://github.com/Microsoft/AirSim) using our new TrapCam environment.  We have provided a taxonomy file mapping our classes into the iNat taxonomy. 
+In order to tackle this problem, we have prepared a challenge where the training data and test data are from different regions, namely The American Southwest and the American Northwest.  The species seen in each region overlap, but are not identical, and the challenge is to classify the test species correctly.  To this end, we will allow training on our American Southwest data (from [CaltechCameraTraps](https://beerys.github.io/CaltechCameraTraps/)), on [iNaturalist 2017/2018](https://github.com/visipedia/inat_comp) data, and on simulated data generated from [Microsoft AirSim](https://github.com/Microsoft/AirSim) using our new TrapCam environment.  We have provided a taxonomy file mapping our classes into the iNat taxonomy. 
 
 This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.google.com/view/fgvc6/home) at [CVPR 2019](http://cvpr2019.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
@@ -22,6 +22,10 @@ Submission Deadline|June 7th, 2019|
 ## Details and Evaluation
 
 There are a total 106,428 training images from 65 different camera locations and 12,719 validation images from 10 new locations not seen at training time. The test set contains 124,040 images from 65 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. 
+
+The set of training classes is:
+
+Instead of providing an explicit set of test classes, we instead provide the classes seen in that region on iNaturalist and their associated likelihoods. This is reported in the file XXX.
 
 The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
 
