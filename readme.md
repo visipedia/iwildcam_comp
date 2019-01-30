@@ -1,36 +1,34 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam3.jpg)
+![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam_2019_banner.jpg)
 
 # iWildCam 2019 Competition
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Unfortunately, a large number of the images that end up being captured tend to be false positives. This is typically caused by non-animal motion in the scene e.g. the wind moving trees. 
 
 The goal of this competition is to 
 
-This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
-
-**ADDITIONAL ANNOTATIONS HAVE BEEN RELEASED!**  Access them [here](https://beerys.github.io/CaltechCameraTraps/)
+This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.google.com/view/fgvc6/home) at [CVPR 2019](http://cvpr2019.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/iwildcam2018).
+We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/iwildcam2019).
 
 
 ## Dates
 |||
 |------|---------------|
-Competition Starts |March, 2018|
-Submission Deadline|June 4th, 2018|
+Competition Starts |March, 2019|
+Submission Deadline|June 7th, 2019|
 
 
 ## Details and Evaluation
 
 There are a total 106,428 training images from 65 different camera locations and 12,719 validation images from 10 new locations not seen at training time. The test set contains 124,040 images from 65 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. 
 
-The evaluation metric is overall accuracy i.e. correctly predicting which of the test images contain animals.
+The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
 
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training and validation images for training models to classify the test images. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data used for training when uploading results.
+The general rule is that participants should only use the provided training and validation images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data used for training when uploading results.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
 
@@ -83,7 +81,7 @@ id,animal_present
 591e4006-23d2-11e8-a6a3-ec086b02610b,0
 ...
 ```
-The `id` column corresponds to the test image id. The `animal_present` is a binary value that indicates if an animal is predicted to be present in the image.
+The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
 
 
 ## Terms of Use
@@ -182,4 +180,4 @@ What causes the non-animal images to trigger varies based on location.  Some loc
 
 ### Acknowledgements
 
-Data is primarily provided by Erin Boydston (USGS) and Justin Brown (NPS).
+Data is primarily provided by Erin Boydston (USGS), Justin Brown (NPS), and the Idaho Department of Fish and Game (IDFG).
