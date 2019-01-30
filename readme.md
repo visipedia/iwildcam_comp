@@ -1,9 +1,9 @@
 ![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam3.jpg)
 
-# iWildCam 2018 Competition
+# iWildCam 2019 Competition
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Unfortunately, a large number of the images that end up being captured tend to be false positives. This is typically caused by non-animal motion in the scene e.g. the wind moving trees. 
 
-The goal of this competition is to predict if images from a diverse set of unseen locations that have been captured both during the day and at night contain an animal. The main challenge is generalizing to camera trap locations that are not present in the training set, large variations in appearance in the same location over time. Another challenge is that some images contain other objects (e.g. people or vehicles) that can trigger the cameras but are not of interest. The animals of interest can be very small, partially occluded, or exiting the frame - you sometimes have to look hard to find them. There may also be a small number of incorrect annotations in the training set.  
+The goal of this competition is to 
 
 This is an FGVCx competition as part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
