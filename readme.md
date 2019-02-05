@@ -7,6 +7,8 @@ In order to tackle this problem, we have prepared a challenge where the training
 
 This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.google.com/view/fgvc6/home) at [CVPR 2019](http://cvpr2019.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
+You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/master/2017/readme.md).
+
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Competition page coming soon.
