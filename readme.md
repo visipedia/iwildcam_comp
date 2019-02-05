@@ -38,9 +38,9 @@ The evaluation metric is top-1 accuracy i.e. correctly predicting the class of e
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training and validation images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data used for training when uploading results.
+The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify that they collected additional annotations when submitting results.
 
 
 ## Annotation Format
@@ -79,8 +79,8 @@ annotation{
   "id" : str,
   "image_id" : str,
   "category_id" : int,
-  "bbox" : [x, y, width, height],
-  "area" : float
+  "bbox" : [x, y, width, height], #only present in a subset of the training images
+  "area" : float #only present in a subset of the training images (those that also contain "bbox")
 }
 ```
 The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
@@ -89,9 +89,9 @@ The `bbox` units are in pixels, the origin is the upper left hand corner, and th
 
 The submission format for the competition is a csv file with the following format:
 ```
-id,animal_present
+id,animal_class
 58857ccf-23d2-11e8-a6a3-ec086b02610b,1
-591e4006-23d2-11e8-a6a3-ec086b02610b,0
+591e4006-23d2-11e8-a6a3-ec086b02610b,5
 ...
 ```
 The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
@@ -99,50 +99,19 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 
 ## Terms of Use
 
-By downloading this dataset you agree to the following terms:
+By downloading the training datasets you agree to the following terms:
 
 1. You will use the data only for non-commercial research and educational purposes.
 2. You will NOT distribute the above images.
 3. The California Institute of Technology makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
 4. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
+By downloading the test dataset you agree to the following terms:
+
 
 ## Data
+All datasets will be released soon
 
-Download the dataset files here:
-  * Training and validation images 50.43GB zipped  
-      * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val.tar.gz)
-      * Running `md5sum train_val.tar.gz` should produce `7dcbbee870c407c69fd6012e5f3dd16c`
-  * Test images 52.52GB zipped  
-     * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/test.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test.tar.gz)
-    * Running `md5sum test.tar.gz` should produce `22423c6896b536b93e95334b544c4c0a`
-  * Train and validation annotations 3.65MB
-     * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/iwildcam2018_annotations.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/iwildcam2018_annotations.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/iwildcam2018_annotations.tar.gz)
-    * Running `md5sum iwildcam2018_annotations.tar.gz` should produce `62437e267340c0a0ccc801eb9a041564`
-
-We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
-  * Smaller training and validation images 20.23GB
-      * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/train_val_sm.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/train_val_sm.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/train_val_sm.tar.gz)
-      * Running `md5sum train_val.tar.gz` should produce `6d0b494a4c115f833aac2850567d1da9`
-  * Smaller test images 21.02GB
-     * Links for different parts of the world:
-        * [North America](https://storage.googleapis.com/iwildcam_2018_us/test_sm.tar.gz)
-        * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test_sm.tar.gz)
-        * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test_sm.tar.gz)
-    * Running `md5sum test.tar.gz` should produce `9a6257a3ac7d298ef5bdc324a3e0efc5`
- 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
 
@@ -173,7 +142,7 @@ Sometimes animals come very close to the camera, causing a forced perspective.
 
 
 #### Weather Conditions:
-Poor weather, including rain or dust, can obstruct the lens and cause false triggers.
+Poor weather, including rain, snow, or dust, can obstruct the lens and cause false triggers.
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/weather.png" width="400">
 
@@ -193,4 +162,4 @@ What causes the non-animal images to trigger varies based on location.  Some loc
 
 ### Acknowledgements
 
-Data is primarily provided by Erin Boydston (USGS), Justin Brown (NPS), and the Idaho Department of Fish and Game (IDFG).
+Data is primarily provided by Erin Boydston (USGS), Justin Brown (NPS), iNaturalist, and the Idaho Department of Fish and Game (IDFG).
