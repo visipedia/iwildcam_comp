@@ -9,7 +9,7 @@ This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.goog
 
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/iwildcam2019).
+We are using Kaggle to host the leaderboard. Competition page coming soon.
 
 
 ## Dates
@@ -21,11 +21,17 @@ Submission Deadline|June 7th, 2019|
 
 ## Details and Evaluation
 
-There are a total 106,428 training images from 65 different camera locations and 12,719 validation images from 10 new locations not seen at training time. The test set contains 124,040 images from 65 locations that are not present in the training or validation sets. The location id (`location`) is given for all images. 
+There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. iNaturalist 2017 and 2018 are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
+
+The test set contains 153,730 images from 100 locations in Idaho. The location id (`location`) is given for all images. 
 
 The set of training classes is:
+'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'empty'
 
-Instead of providing an explicit set of test classes, we instead provide the classes seen in that region on iNaturalist and their associated likelihoods. This is reported in the file XXX.
+The set of test classes is:
+'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'moose', 'small_mammal', 'elk', 'pronghorn', 'bighorn_sheep', 'black_bear', 'wolf', 'bison', 'mountain_goat', 'empty'
+
+Not all test classes are guaranteed to be in the test set.  The list of test classes was determined based on species that have been seen in Idaho on iNaturalist, and an explicit mapping between all classes and the iNat taxonomy will be provided.
 
 The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
 
@@ -38,7 +44,7 @@ Participants are allowed to collect additional annotations (e.g. bounding boxes,
 
 
 ## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training images has a `category_id` that is either `0` indicating no animal present or `1` indicating animal present. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to it's corresponding category label. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
   "info" : info,
@@ -72,9 +78,12 @@ category{
 annotation{
   "id" : str,
   "image_id" : str,
-  "category_id" : int
+  "category_id" : int,
+  "bbox" : [x, y, width, height],
+  "area" : float
 }
 ```
+The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
 
 ## Submission Format
 
