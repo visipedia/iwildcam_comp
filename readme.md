@@ -21,7 +21,7 @@ Submission Deadline|June 7th, 2019|
 
 ## Details and Evaluation
 
-There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. iNaturalist 2017 and 2018 are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
+There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. iNaturalist 2017 and 2018 datasets and simulated Mocrosoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
 
 The test set contains 153,730 images from 100 locations in Idaho. The location id (`location`) is given for all images. 
 
@@ -38,7 +38,7 @@ The evaluation metric is top-1 accuracy i.e. correctly predicting the class of e
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
+The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data and simulated Microsoft AirSim data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify that they collected additional annotations when submitting results.
 
