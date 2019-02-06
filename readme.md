@@ -23,7 +23,7 @@ Submission Deadline|June 7th, 2019|
 
 ## Details and Evaluation
 
-There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. iNaturalist 2017 and 2018 datasets and simulated Mocrosoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
+There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. The iNaturalist 2017 and 2018 data and simulated Microsoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
 
 The test set contains 153,730 images from 100 locations in Idaho. The location id (`location`) is given for all images. 
 
