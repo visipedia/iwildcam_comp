@@ -98,21 +98,6 @@ id,animal_class
 ```
 The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
 
-
-## Terms of Use
-
-By downloading the training datasets you agree to the following terms:
-
-1. You will use the data only for non-commercial research and educational purposes.
-2. You will NOT distribute the above images.
-3. The California Institute of Technology makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
-4. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
-
-By downloading the test dataset you agree to the following terms:
-1. No representations or warranties are made regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.  Some information shared under this agreement may not have undergone quality assurance procedures and should be considered provisional.
-2. Images may not be sold in any format, but may be used for scientific publications.  Please acknowledge the Idaho Department of Fish and Game when using images for publication or scientific communication.
-
-
 ## Data
 All datasets will be released soon
 
@@ -163,6 +148,16 @@ At any given location, the background changes over time as the seasons change.  
 
 #### Non-Animal Variability:
 What causes the non-animal images to trigger varies based on location.  Some locations contain lots of vegetation, which can cause false triggers as it moves in the wind.  Others are near roadways, so can be triggered by cars or bikers.  
+
+## Terms of Use
+
+By downloading Caltech Camera Traps you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
+
+By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://github.com/visipedia/inat_comp).
+
+By downloading the IDFG dataset you agree to the following terms:
+1. No representations or warranties are made regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.  Some information shared under this agreement may not have undergone quality assurance procedures and should be considered provisional.
+2. Images may not be sold in any format, but may be used for scientific publications.  Please acknowledge the Idaho Department of Fish and Game when using images for publication or scientific communication.
 
 ### Acknowledgements
 
