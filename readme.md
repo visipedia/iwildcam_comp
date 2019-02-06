@@ -151,11 +151,11 @@ What causes the non-animal images to trigger varies based on location.  Some loc
 
 ## Terms of Use
 
-By downloading Caltech Camera Traps you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
+By downloading Caltech Camera Traps data you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
 
 By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://github.com/visipedia/inat_comp).
 
-By downloading the IDFG dataset you agree to the following terms:
+By downloading IDFG data you agree to the following terms:
 1. No representations or warranties are made regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.  Some information shared under this agreement may not have undergone quality assurance procedures and should be considered provisional.
 2. Images may not be sold in any format, but may be used for scientific publications.  Please acknowledge the Idaho Department of Fish and Game when using images for publication or scientific communication.
 
