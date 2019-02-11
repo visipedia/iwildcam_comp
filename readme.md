@@ -69,7 +69,11 @@ image{
   "height" : int,
   "file_name" : str,
   "rights_holder" : str,
-  "location": int
+  "location": int,
+  "datetime": datetime,
+  "seq_id": str,
+  "seq_num_frames": int,
+  "frame_num": int
 }
 
 category{
