@@ -23,7 +23,7 @@ Submission Deadline|June 7th, 2019|
 
 ## Details and Evaluation
 
-There are a total 196,157 camera trap training images from 138 different camera locations in Southern California. The iNaturalist 2017 and 2018 data and simulated Microsoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
+The Caltech Camera Traps training set includes a total of 196,157 camera trap training images from 138 different camera locations in Southern California. The iNaturalist 2017 and 2018 data and simulated Microsoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
 
 The test set contains 153,730 images from 100 locations in Idaho. The location id (`location`) is given for all images. 
 
@@ -34,6 +34,8 @@ The set of test classes is:
 'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'moose', 'small_mammal', 'elk', 'pronghorn', 'bighorn_sheep', 'black_bear', 'wolf', 'bison', 'mountain_goat', 'empty'
 
 Not all test classes are guaranteed to be in the test set.  The list of test classes was determined based on species that have been seen in Idaho on iNaturalist, and an explicit mapping between all classes and the iNat taxonomy will be provided.
+
+To reduce the ovehead of entry, we have provided a subset of iNaturalist 2017 and 2018 data containing the classes seen in iDaho, and explicitly mapping them to the test classes.
 
 The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
 
