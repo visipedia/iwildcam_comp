@@ -111,7 +111,7 @@ We are also providing a general animal detection model which competitors are fre
 
 The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone and atrous convolution.  It can be downloaded [here](https://lilablobssc.blob.core.windows.net/models/camera_traps/megadetector/megadetector_v2.pb).
 
-Simple code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection_eval/run_tf_detector.py).
+Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection_eval/run_tf_detector.py).
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
