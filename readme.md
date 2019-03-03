@@ -104,9 +104,10 @@ id,animal_class
 ```
 The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
 
-## Data and Models
+## Data
 All datasets will be released soon
 
+## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
 
 The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone and atrous convolution.  It can be downloaded [here](https://lilablobssc.blob.core.windows.net/models/camera_traps/megadetector/megadetector_v2.pb).
