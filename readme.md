@@ -9,6 +9,8 @@ This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.goog
 
 You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md).
 
+There is $2,000 sponsored by [Microsoft AI for Earth][3] that will be awarded to top challenge solutions at the discretion of the competition hosts.  At the end of the competition we will invite the top-scoring teams to document and open-source their methods and models.  The prize money will be awarded to one or more teams based on their solutions: a combination of competition results, documentation and open-sourcing of methods and models, and method novelty.  
+
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Competition page coming soon.
