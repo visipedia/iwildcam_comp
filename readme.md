@@ -88,7 +88,8 @@ annotation{
   "id" : str,
   "image_id" : str,
   "category_id" : int,
-  "bbox" : [x, y, width, height], #only present in a subset of the training images
+  # These are in absolute, floating-point coordinates, with the origin at the upper-left, and only present in a subset of the training images
+  "bbox" : [x, y, width, height], 
   "area" : float #only present in a subset of the training images (those that also contain "bbox")
 }
 ```
