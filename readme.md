@@ -108,7 +108,29 @@ id,animal_class
 The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
 
 ## Data
-All datasets will be released soon
+Download the dataset files here:
+  * CCT images and annotations 87GB zipped
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_2019_CCT.tar.gz)
+      * Running `md5sum iWildCam_2019_CCT.tar.gz` should produce `21323ae381653240ff21768658cc44df`
+  * IDFG images and annotations 153GB zipped
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_2019_IDFG.tar.gz)
+      * Running `md5sum iWildCam_2019_IDFG.tar.gz` should produce `4c2eaeba30cef2d3c13b9dabcdf13c21`
+  * iNat Idaho images and annotations 7.2GB zipped
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_2019_iNat_Idaho.tar.gz)
+      * Running `md5sum iWildCam_2019_iNat_Idaho.tar.gz` should produce `2fdeec4056134137cdc3dacc39ff1d90`
+  * All annotations and iNat taxa map 156MB
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_2019_Annotations.tar.gz)
+      * Running `md5sum iWildCam_2019_Annotations.tar.gz` should produce `2829a2c04898739b7fa6bd70b8e34bc2`
+  * Sample submission file
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/IDFG_Sample_Submission.csv)
+
+We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
+  * Smaller CCT images 27GB
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_2019_CCT_images_small.tar.gz)
+      * Running `md5sum iWildCam_2019_CCT_images_small.tar.gz` should produce `3420db75e1db481a2a6dd4e25c9b6e61` 
+  * Smaller IDFG images 18GB
+    * [Download Link](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/iWildCam_IDFG_images_small.tar.gz)
+       * Running md5sum `iWildCam_IDFG_images_small.tar.gz` should produce `4ec638281337be6a086c40228e9b706d`
 
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
@@ -116,6 +138,16 @@ We are also providing a general animal detection model which competitors are fre
 The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone and atrous convolution.  It can be downloaded [here](https://lilablobssc.blob.core.windows.net/models/camera_traps/megadetector/megadetector_v2.pb).
 
 Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection_eval/run_tf_detector.py).
+
+We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences [here](https://wildcamdrop.blob.core.windows.net/wildcamdropcontainer/Detection_Results.tar.gz). Detections are provided in the following format: 
+```
+{
+'images':[list of image ids],
+'detections':[list of lists of bounding boxes, 100 bounding boxes for each image]
+'detection_labels':[list of lists of labels, all "1" for "animal" in this case],
+'detection_scores':[list of lists of scores, 1 score for each detected box]
+}
+```
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
