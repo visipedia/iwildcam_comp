@@ -34,9 +34,9 @@ The set of training classes is:
 The set of test classes is:
 'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'moose', 'small_mammal', 'elk', 'pronghorn', 'bighorn_sheep', 'black_bear', 'wolf', 'bison', 'mountain_goat', 'empty'
 
-Not all test classes are guaranteed to be in the test set.  The list of test classes was determined based on species that have been seen in Idaho on iNaturalist, and an explicit mapping between all classes and the iNat taxonomy will be provided.
+Not all test classes are guaranteed to be in the test set.  The list of test classes was determined based on species that have been seen in Idaho on iNaturalist, and an explicit mapping between all classes and the iNat taxonomy is provided.
 
-To reduce the ovehead of entry, we have provided a subset of iNaturalist 2017 and 2018 data containing the classes seen in iDaho, and explicitly mapping them to the test classes.
+To reduce the ovehead of entry, we have provided a subset of iNaturalist 2017 and 2018 data containing the classes seen in Idaho, and explicitly mapping them to the test classes.
 
 The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
 
