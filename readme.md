@@ -124,13 +124,20 @@ Download the dataset files here:
   * Sample submission file
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/IDFG_Sample_Submission.csv)
 
-We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
+We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
   * Smaller CCT images 27GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT_images_small.tar.gz)
       * Running `md5sum iWildCam_2019_CCT_images_small.tar.gz` should produce `3420db75e1db481a2a6dd4e25c9b6e61` 
   * Smaller IDFG images 18GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_IDFG_images_small.tar.gz)
        * Running md5sum `iWildCam_IDFG_images_small.tar.gz` should produce `4ec638281337be6a086c40228e9b706d`
+       
+Simulated Data from Microsoft AirSim
+  * Sample AirSim images and annotations 129GB zipped 
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_AirSim.tar.gz)
+       * Running md5sum `iWildCam_2019_AirSim.tar.gz` should produce 1c978b97804933d36571b5456e9c2b2c
+  * This data contains synthetically generated images of the following classes: deer, raccoon, coyote, bison, bear
+  * Competitors are welcome to use this data as they see fit, or to generate their own data using AirSim-TrapCam. You can download the TrapCam binary [here](https://github.com/Microsoft/AirSim/releases/download/v1.2.1/TrapCam.zip.002), and AirSim code and documentation can be found on the [AirSim GitHub](https://github.com/Microsoft/AirSim).
 
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
