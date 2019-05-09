@@ -136,7 +136,7 @@ Simulated Data from Microsoft AirSim
   * Sample AirSim images and annotations 129GB zipped 
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_AirSim.tar.gz)
        * Running md5sum `iWildCam_2019_AirSim.tar.gz` should produce 1c978b97804933d36571b5456e9c2b2c
-  * This sample dataset contains synthetically generated images of the following classes: deer, raccoon, coyote, bison, black_bear
+  * This sample dataset contains synthetically generated images of the following classes: deer, fox, black_bear, racoon, wolf and bison
   * Competitors are welcome to use this data as they see fit, or to generate their own synthetic camera trap data using AirSim-TrapCam. You can download the TrapCam binary [here](https://github.com/Microsoft/AirSim/releases/download/v1.2.1/TrapCam.zip.002), and AirSim code and documentation can be found on the [AirSim GitHub](https://github.com/Microsoft/AirSim).
 
 ## Camera Trap Animal Detection Model
