@@ -11,6 +11,16 @@ There is $2,000 sponsored by [Microsoft AI for Earth](https://www.microsoft.com/
 
 You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md).
 
+If you use this challenge data in publication, please cite:
+```
+@article{beery2019iwildcam,
+ title={The iWildCam 2019 Challenge Dataset},
+ author={Beery, Sara and Morris, Dan and Perona, Pietro},
+ journal={arXiv preprint arXiv:1907.07617},
+ year={2019}
+}
+```
+
 ## Kaggle
 We are using Kaggle to host the leaderboard. Competition page coming soon.
 
