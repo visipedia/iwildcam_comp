@@ -22,7 +22,7 @@ If you use this challenge data in publication, please cite:
 ```
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Competition page coming soon.
+We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2019-fgvc6/overview).
 
 
 ## Dates
