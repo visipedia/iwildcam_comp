@@ -1,6 +1,6 @@
 ![Banner](https://rawgit.com/visipedia/iwildcam_comp/2020/assets/iwildcam2020header.jpg)
 
-# iWildCam 2020 Competition
+# iWildCam 2020
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species. We have recently been making strides towards automating the species classification challenge in camera traps, but as we try to expand the scope of these models we are faced with an interesting problem: how do you train a model that will perform well on new (unseen during training) camera traps? Can you leverage data from other modalities, such as citizen science data and remote sensing data?
 
 In order to tackle this problem, we have prepared a challenge where the training data and test data are from different cameras spread across the globe. The species seen in each camera overlap, but are not identical, and the challenge is to classify species in the test cameras correctly. To explore multimodal solutions, we allow competitors to train data from our camera trap training set (data provided by Wildlife Conservation Society via LILA.science), on iNaturalist 2017-2019 data, and on the provided Landsat 8 remote sensing data across all 10 spectral bands, matched to the camera trap locations. We have provided a taxonomy file mapping our classes into the iNat taxonomy, and a subset of iNat data mapped into our class set. 
