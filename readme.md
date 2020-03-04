@@ -94,24 +94,24 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 Download the dataset files here:
   * WCS training images 87GB zipped
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
-      * Running `md5sum train.zip` should produce `21323ae381653240ff21768658cc44df`
+      * Running `md5sum train.zip` should produce ``
   * WCS test images 153GB zipped
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
-      * Running `md5sum test.zip` should produce `4c2eaeba30cef2d3c13b9dabcdf13c21`
+      * Running `md5sum test.zip` should produce ``
   * WCS annotations and MegaDetector Results
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
-      * Running `md5sum metadata.zip` should produce `2fdeec4056134137cdc3dacc39ff1d90`
+      * Running `md5sum metadata.zip` should produce ``
   * iWildCam Remote Sensing Data
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
-      * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `2829a2c04898739b7fa6bd70b8e34bc2`
+      * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
 
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
   * Smaller WCS train images 27GB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT_images_small.tar.gz)
-      * Running `md5sum iWildCam_2019_CCT_images_small.tar.gz` should produce `3420db75e1db481a2a6dd4e25c9b6e61` 
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/train_small.zip)
+      * Running `md5sum train_small.zip` should produce `` 
   * Smaller WCS test images 18GB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_IDFG_images_small.tar.gz)
-       * Running md5sum `iWildCam_IDFG_images_small.tar.gz` should produce `4ec638281337be6a086c40228e9b706d`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/test_small.zip)
+       * Running md5sum `test_small.zip` should produce ``
        
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
@@ -137,7 +137,7 @@ image{
 detection{
   # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
   'bbox' : [x, y, width, height], 
-  #note that the categories returned by the detector are *not* the categories in the WCS dataset
+  # note that the categories returned by the detector are not the categories in the WCS dataset
   'category': str,
   'conf': float
 }
