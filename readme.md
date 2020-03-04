@@ -96,36 +96,27 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 
 ## Data
 Download the dataset files here:
-  * CCT images and annotations 87GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT.tar.gz)
-      * Running `md5sum iWildCam_2019_CCT.tar.gz` should produce `21323ae381653240ff21768658cc44df`
-  * IDFG images and annotations 153GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_IDFG.tar.gz)
-      * Running `md5sum iWildCam_2019_IDFG.tar.gz` should produce `4c2eaeba30cef2d3c13b9dabcdf13c21`
-  * iNat Idaho images and annotations 7.2GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_iNat_Idaho.tar.gz)
-      * Running `md5sum iWildCam_2019_iNat_Idaho.tar.gz` should produce `2fdeec4056134137cdc3dacc39ff1d90`
-  * All annotations and iNat taxa map 156MB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_Annotations.tar.gz)
-      * Running `md5sum iWildCam_2019_Annotations.tar.gz` should produce `2829a2c04898739b7fa6bd70b8e34bc2`
-  * Sample submission file
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/IDFG_Sample_Submission.csv)
+  * WCS training images 87GB zipped
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
+      * Running `md5sum train.zip` should produce `21323ae381653240ff21768658cc44df`
+  * WCS test images 153GB zipped
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
+      * Running `md5sum test.zip` should produce `4c2eaeba30cef2d3c13b9dabcdf13c21`
+  * WCS annotations and MegaDetector Results
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
+      * Running `md5sum metadata.zip` should produce `2fdeec4056134137cdc3dacc39ff1d90`
+  * iWildCam Remote Sensing Data
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
+      * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `2829a2c04898739b7fa6bd70b8e34bc2`
 
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
-  * Smaller CCT images 27GB
+  * Smaller WCS train images 27GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT_images_small.tar.gz)
       * Running `md5sum iWildCam_2019_CCT_images_small.tar.gz` should produce `3420db75e1db481a2a6dd4e25c9b6e61` 
-  * Smaller IDFG images 18GB
+  * Smaller WCS test images 18GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_IDFG_images_small.tar.gz)
        * Running md5sum `iWildCam_IDFG_images_small.tar.gz` should produce `4ec638281337be6a086c40228e9b706d`
        
-Simulated Data from Microsoft AirSim
-  * Sample AirSim images and annotations 129GB zipped 
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_AirSim.tar.gz)
-       * Running md5sum `iWildCam_2019_AirSim.tar.gz` should produce 1c978b97804933d36571b5456e9c2b2c
-  * This sample dataset contains synthetically generated images of the following classes: deer, fox, black_bear, racoon, wolf and bison
-  * Competitors are welcome to use this data as they see fit, or to generate their own synthetic camera trap data using AirSim-TrapCam. You can download the TrapCam binary [here](https://github.com/Microsoft/AirSim/releases/download/v1.2.1/TrapCam.zip.002), and AirSim code and documentation can be found on the [AirSim GitHub](https://github.com/Microsoft/AirSim).
-
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
 
@@ -133,7 +124,7 @@ The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone an
 
 Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
-We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences [here](https://lilablobssc.blob.core.windows.net/iwildcam2019/Detection_Results.tar.gz). Detections are provided in the following format: 
+We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences along with the metadata for WCS. Detections are provided in the following format: 
 ```
 {
 'images':[list of image ids],
