@@ -94,7 +94,7 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 Download the dataset files here:
   * WCS training images 87GB zipped
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
-      * Running `md5sum train.zip` should produce ``
+      * Running `md5sum train.zip` should produce `881d703639ce1df034e32fee1222bdcb`
   * WCS test images 153GB zipped
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
       * Running `md5sum test.zip` should produce ``
