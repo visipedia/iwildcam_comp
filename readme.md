@@ -74,11 +74,7 @@ category{
 annotation{
   "id" : str,
   "image_id" : str,
-  "category_id" : int,
-  # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
-  # they are only present in a subset of the training images
-  "bbox" : [x, y, width, height], 
-  "area" : float #only present in a subset of the training images (those that also contain "bbox")
+  "category_id" : int
 }
 ```
 The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
@@ -127,10 +123,23 @@ Sample code for running the detector over a folder of images can be found [here]
 We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences along with the metadata for WCS. Detections are provided in the following format: 
 ```
 {
-'images':[list of image ids],
-'detections':[list of lists of bounding boxes, 100 bounding boxes for each image]
-'detection_labels':[list of lists of labels, all "1" for "animal" in this case],
-'detection_scores':[list of lists of scores, 1 score for each detected box]
+  'images':[image],
+  'detection_categories': {'1': 'animal', '2': 'person'},
+  'info': info
+}
+
+image{
+  'id': str,
+  'max_detection_conf': float,
+  'detections':[detection]
+}
+
+detection{
+  # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
+  'bbox' : [x, y, width, height], 
+  #note that the categories returned by the detector are *not* the categories in the WCS dataset
+  'category': str,
+  'conf': float
 }
 ```
 
