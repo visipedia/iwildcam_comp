@@ -104,7 +104,19 @@ Download the dataset files here:
   * iWildCam Remote Sensing Data
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
-
+  * iNaturalist 2017 subset of images from our classes
+    * [Download Link]()
+      * Running `md5sum ` should produce ``
+  * iNaturalist 2017 subset metadata
+    * [Download Link]()
+      * Running `md5sum ` should produce ``
+  * iNaturalist 2018 subset of images from our classes
+    * [Download Link]()
+      * Running `md5sum ` should produce ``
+  * iNaturalist 2018 subset metadata
+    * [Download Link]()
+      * Running `md5sum ` should produce ``
+      
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
   * Smaller WCS train images 27GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/train_small.zip)
