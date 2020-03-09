@@ -32,13 +32,13 @@ Submissions will be evaluated based on their categorization accuracy.
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017-2019 data and the provided Landsat 8 tiles data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017-2019 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
+The general rule is that participants should only use the provided training images for training models to classify the test images. Participants are allowed to use the iNaturalist 2017-2019 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Models pretrained on standard computer vision datasets may be used to construct the algorithms (e.g. ImageNet pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify that they collected additional annotations when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
 
 
 ## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to it's corresponding category label. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to its corresponding category label. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
   "info" : info,
@@ -209,8 +209,8 @@ What causes the non-animal images to trigger varies based on location.  Some loc
 
 By downloading Wildlife Conservation Society data or iWildCam Remote Sensing data you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
 
-By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://github.com/visipedia/inat_comp).
+By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://www.inaturalist.org/pages/terms).
 
 ### Acknowledgements
 
-Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, and Microsoft AI for Earth.
+Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth.
