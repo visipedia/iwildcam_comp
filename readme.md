@@ -105,18 +105,18 @@ Download the dataset files here:
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
   * iNaturalist 2017 subset of images from our classes
-    * [Download Link]()
-      * Running `md5sum ` should produce ``
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2017.tar.gz)
+      * Running `md5sum inaturalist_2017.tar.gz` should produce `bf9f18c0bc0169c243a8958d3705a0b9`
   * iNaturalist 2017 subset metadata
-    * [Download Link]()
-      * Running `md5sum ` should produce ``
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
+      * Running `md5sum inaturalist_2017_to_iwildcam_train.json` should produce `8664e8f16596995aae3a612d56e6426d`
   * iNaturalist 2018 subset of images from our classes
-    * [Download Link]()
-      * Running `md5sum ` should produce ``
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2018.tar.gz)
+      * Running `md5sum inaturalist_2018.tar.gz` should produce `44c0d20abefb27ec1555bd451d4c8904`
   * iNaturalist 2018 subset metadata
-    * [Download Link]()
-      * Running `md5sum ` should produce ``
-      
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
+      * Running `md5sum inaturalist_2018_to_iwildcam_train.json` should produce `dcdc925a494cb0e58daf9201eb69f595`
+<!---      
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
   * Smaller WCS train images 27GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/train_small.zip)
@@ -124,7 +124,7 @@ We also provide a smaller version of the camera trap datasets where the image wi
   * Smaller WCS test images 18GB
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/test_small.zip)
        * Running md5sum `test_small.zip` should produce ``
-       
+--->      
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
 
