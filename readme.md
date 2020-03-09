@@ -22,11 +22,13 @@ Submission Deadline|May 11, 2020|
 
 ## Details and Evaluation
 
-The WCS training set contains 217,959 images from 441 different global locations. You may also choose to use supplemental training data from iNaturalist 2017, iNaturalist 2018, iNaturalist 2019, and the provided remote sensing data from Landsat-8 which is matched to the camera locations. As a courtesy, we have curated all the images from iNaturalist 2017-2019 containing classes that might be in the test set and mapped them into the iWildCam categories (we call this set iNat_WCS). 
+The WCS training set contains 217,959 images from 441 different global locations, and the WCS test set contains 62,894 images from 111 locations globally. The location id (`location`) is given for all images.
 
-The test set contains 62,894 images from 111 locations globally. The location id (`location`) is given for all images. 
+This year we are providing Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
 
-Submissions will be evaluated based on their macro F1 score - i.e. F1 will be calculated for each class of animal (including "empty" if no animal is present), and the submission's final score will be the unweighted mean of all class F1 scores.
+You may also choose to use supplemental training data from iNaturalist 2017, iNaturalist 2018, iNaturalist 2019. As a courtesy, we have curated all the images from iNaturalist 2017-2019 containing classes that might be in the test set and mapped them into the iWildCam categories (we call this set iNat_WCS). 
+
+Submissions will be evaluated based on their categorization accuracy.
 
 ## Guidelines
 
