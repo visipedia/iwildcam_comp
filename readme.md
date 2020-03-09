@@ -1,59 +1,36 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/sara/assets/iwildcam_2019_banner.jpg)
+![Banner](https://rawgit.com/visipedia/iwildcam_comp/2020/assets/iwildcam2020header.jpg)
 
-# iWildCam 2019 Competition
-Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species.  We have recently been making strides towards automating the species classification challenge in camera traps, but as we try to expand the scope of these models from specific regions where we have collected training data to nearby areas we are faced with an interesting probem: how do you classify a species in a new region that you may not have seen in previous training data?
+# iWildCam 2020
+Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species. We have recently been making strides towards automating the species classification challenge in camera traps, but as we try to expand the scope of these models we are faced with an interesting problem: how do you train a model that will perform well on new (unseen during training) camera traps? Can you leverage data from other modalities, such as citizen science data and remote sensing data?
 
-In order to tackle this problem, we have prepared a challenge where the training data and test data are from different regions, namely The American Southwest and the American Northwest.  The species seen in each region overlap, but are not identical, and the challenge is to classify the test species correctly.  To this end, we will allow training on our American Southwest data (from [CaltechCameraTraps](https://beerys.github.io/CaltechCameraTraps/)), on [iNaturalist 2017/2018](https://github.com/visipedia/inat_comp) data, and on simulated data generated from [Microsoft AirSim](https://github.com/Microsoft/AirSim).  We have provided a taxonomy file mapping our classes into the iNat taxonomy. 
+In order to tackle this problem, we have prepared a challenge where the training data and test data are from different cameras spread across the globe. The species seen in each camera overlap, but are not identical, and the challenge is to classify species in the test cameras correctly. To explore multimodal solutions, we allow competitors to train data from our camera trap training set (data provided by Wildlife Conservation Society via LILA.science), on iNaturalist 2017-2019 data, and on the provided Landsat 8 remote sensing data across all 10 spectral bands, matched to the camera trap locations. We have provided a taxonomy file mapping our classes into the iNat taxonomy, and a subset of iNat data mapped into our class set. 
 
-This is an FGVCx competition as part of the [FGVC^6 workshop](https://sites.google.com/view/fgvc6/home) at [CVPR 2019](http://cvpr2019.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
+This is an FGVCx competition as part of the [FGVC^7 workshop](https://sites.google.com/view/fgvc7/home) at [CVPR 2020](http://cvpr2019.thecvf.com/). Please open an issue if you have questions or problems with the dataset.
 
-There is $2,000 sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) that will be awarded at the FGVC^6 workshop to top challenge solutions at the discretion of the competition hosts.  At the end of the competition we will invite the top-scoring teams to document and open-source their methods and models.  The prize money will be awarded to one or more teams based on their solutions: a combination of competition results, documentation and open-sourcing of methods and models, and method novelty.  
-
-You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md).
-
-If you use this challenge data in publication, please cite:
-```
-@article{beery2019iwildcam,
- title={The iWildCam 2019 Challenge Dataset},
- author={Beery, Sara and Morris, Dan and Perona, Pietro},
- journal={arXiv preprint arXiv:1907.07617},
- year={2019}
-}
-```
+You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), and the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2019-fgvc6/overview).
+We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc7/overview).
 
 
 ## Dates
 |||
 |------|---------------|
-Competition Starts |March, 2019|
-Submission Deadline|June 7th, 2019|
+Competition Starts |March 9, 2020|
+Submission Deadline|May 11, 2020|
 
 
 ## Details and Evaluation
 
-The Caltech Camera Traps training set includes a total of 196,157 camera trap training images from 138 different camera locations in Southern California. The iNaturalist 2017 and 2018 data and simulated Microsoft AirSim data are also allowed to be used during training time. Competitors are encouraged to construct a validation set from the training datasets as they see fit.
+The WCS training set contains 217,959 images from 441 different global locations. You may also choose to use supplemental training data from iNaturalist 2017, iNaturalist 2018, iNaturalist 2019, and the provided remote sensing data from Landsat-8 which is matched to the camera locations. As a courtesy, we have curated all the images from iNaturalist 2017-2019 containing classes that might be in the test set and mapped them into the iWildCam categories (we call this set iNat_WCS). 
 
-The test set contains 153,730 images from 100 locations in Idaho. The location id (`location`) is given for all images. 
+The test set contains 62,894 images from 111 locations globally. The location id (`location`) is given for all images. 
 
-The set of training classes is:
-'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'empty'
-
-The set of test classes is:
-'bobcat', 'opossum', 'coyote', 'raccoon', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'rodent', 'deer', 'fox', 'mountain_lion', 'moose', 'small_mammal', 'elk', 'pronghorn', 'bighorn_sheep', 'black_bear', 'wolf', 'bison', 'mountain_goat', 'empty'
-
-Not all test classes are guaranteed to be in the test set.  The list of test classes was determined based on species that have been seen in Idaho on iNaturalist, and an explicit mapping between all classes and the iNat taxonomy is provided.
-
-To reduce the ovehead of entry, we have provided a subset of iNaturalist 2017 and 2018 data containing the classes seen in Idaho, and explicitly mapping them to the test classes.
-
-The evaluation metric is top-1 accuracy i.e. correctly predicting the class of each animal, or predicting "empty" if no animal is present.
-
+Submissions will be evaluated based on their macro F1 score - i.e. F1 will be calculated for each class of animal (including "empty" if no animal is present), and the submission's final score will be the unweighted mean of all class F1 scores.
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017/2018 data and simulated Microsoft AirSim data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017/2018 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
+The general rule is that participants should only use the provided training images for training models to classify the test images. We have decided to allow the use of iNaturalist 2017-2019 data and the provided Landsat 8 tiles data during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017-2019 pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify that they collected additional annotations when submitting results.
 
@@ -97,11 +74,7 @@ category{
 annotation{
   "id" : str,
   "image_id" : str,
-  "category_id" : int,
-  # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
-  # they are only present in a subset of the training images
-  "bbox" : [x, y, width, height], 
-  "area" : float #only present in a subset of the training images (those that also contain "bbox")
+  "category_id" : int
 }
 ```
 The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
@@ -119,36 +92,39 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 
 ## Data
 Download the dataset files here:
-  * CCT images and annotations 87GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT.tar.gz)
-      * Running `md5sum iWildCam_2019_CCT.tar.gz` should produce `21323ae381653240ff21768658cc44df`
-  * IDFG images and annotations 153GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_IDFG.tar.gz)
-      * Running `md5sum iWildCam_2019_IDFG.tar.gz` should produce `4c2eaeba30cef2d3c13b9dabcdf13c21`
-  * iNat Idaho images and annotations 7.2GB zipped
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_iNat_Idaho.tar.gz)
-      * Running `md5sum iWildCam_2019_iNat_Idaho.tar.gz` should produce `2fdeec4056134137cdc3dacc39ff1d90`
-  * All annotations and iNat taxa map 156MB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_Annotations.tar.gz)
-      * Running `md5sum iWildCam_2019_Annotations.tar.gz` should produce `2829a2c04898739b7fa6bd70b8e34bc2`
-  * Sample submission file
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/IDFG_Sample_Submission.csv)
-
+  * WCS training images 87GB zipped
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
+      * Running `md5sum train.zip` should produce `881d703639ce1df034e32fee1222bdcb`
+  * WCS test images 153GB zipped
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
+      * Running `md5sum test.zip` should produce `adac3be1b45e12e062299615386cae05`
+  * WCS annotations and MegaDetector Results
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
+      * Running `md5sum metadata.zip` should produce `3050b2a641ebef259ee73e1476e5e6ae`
+  * iWildCam Remote Sensing Data
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
+      * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
+  * iNaturalist 2017 subset of images from our classes
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2017.tar.gz)
+      * Running `md5sum inaturalist_2017.tar.gz` should produce `bf9f18c0bc0169c243a8958d3705a0b9`
+  * iNaturalist 2017 subset metadata
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
+      * Running `md5sum inaturalist_2017_to_iwildcam_train.json` should produce `8664e8f16596995aae3a612d56e6426d`
+  * iNaturalist 2018 subset of images from our classes
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2018.tar.gz)
+      * Running `md5sum inaturalist_2018.tar.gz` should produce `44c0d20abefb27ec1555bd451d4c8904`
+  * iNaturalist 2018 subset metadata
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
+      * Running `md5sum inaturalist_2018_to_iwildcam_train.json` should produce `dcdc925a494cb0e58daf9201eb69f595`
+<!---      
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
-  * Smaller CCT images 27GB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT_images_small.tar.gz)
-      * Running `md5sum iWildCam_2019_CCT_images_small.tar.gz` should produce `3420db75e1db481a2a6dd4e25c9b6e61` 
-  * Smaller IDFG images 18GB
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_IDFG_images_small.tar.gz)
-       * Running md5sum `iWildCam_IDFG_images_small.tar.gz` should produce `4ec638281337be6a086c40228e9b706d`
-       
-Simulated Data from Microsoft AirSim
-  * Sample AirSim images and annotations 129GB zipped 
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_AirSim.tar.gz)
-       * Running md5sum `iWildCam_2019_AirSim.tar.gz` should produce 1c978b97804933d36571b5456e9c2b2c
-  * This sample dataset contains synthetically generated images of the following classes: deer, fox, black_bear, racoon, wolf and bison
-  * Competitors are welcome to use this data as they see fit, or to generate their own synthetic camera trap data using AirSim-TrapCam. You can download the TrapCam binary [here](https://github.com/Microsoft/AirSim/releases/download/v1.2.1/TrapCam.zip.002), and AirSim code and documentation can be found on the [AirSim GitHub](https://github.com/Microsoft/AirSim).
-
+  * Smaller WCS train images 27GB
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/train_small.zip)
+      * Running `md5sum train_small.zip` should produce `` 
+  * Smaller WCS test images 18GB
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/test_small.zip)
+       * Running md5sum `test_small.zip` should produce ``
+--->      
 ## Camera Trap Animal Detection Model
 We are also providing a general animal detection model which competitors are free to use as they see fit.
 
@@ -156,13 +132,26 @@ The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone an
 
 Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
-We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences [here](https://lilablobssc.blob.core.windows.net/iwildcam2019/Detection_Results.tar.gz). Detections are provided in the following format: 
+We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences along with the metadata for WCS. Detections are provided in the following format: 
 ```
 {
-'images':[list of image ids],
-'detections':[list of lists of bounding boxes, 100 bounding boxes for each image]
-'detection_labels':[list of lists of labels, all "1" for "animal" in this case],
-'detection_scores':[list of lists of scores, 1 score for each detected box]
+  'images':[image],
+  'detection_categories': {'1': 'animal', '2': 'person'},
+  'info': info
+}
+
+image{
+  'id': str,
+  'max_detection_conf': float,
+  'detections':[detection]
+}
+
+detection{
+  # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
+  'bbox' : [x, y, width, height], 
+  # note that the categories returned by the detector are not the categories in the WCS dataset
+  'category': str,
+  'conf': float
 }
 ```
 
@@ -216,14 +205,10 @@ What causes the non-animal images to trigger varies based on location.  Some loc
 
 ## Terms of Use
 
-By downloading Caltech Camera Traps data you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
+By downloading Wildlife Conservation Society data or iWildCam Remote Sensing data you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
 
 By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://github.com/visipedia/inat_comp).
 
-By downloading IDFG data you agree to the following terms:
-1. No representations or warranties are made regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.  Some information shared under this agreement may not have undergone quality assurance procedures and should be considered provisional.
-2. Images may not be sold in any format, but may be used for scientific publications.  Please acknowledge the Idaho Department of Fish and Game when using images for publication or scientific communication.
-
 ### Acknowledgements
 
-Data is primarily provided by Erin Boydston (USGS), Justin Brown (NPS), iNaturalist, and the Idaho Department of Fish and Game (IDFG).
+Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, and Microsoft AI for Earth.
