@@ -171,7 +171,7 @@ The shutter speed of the camera is not fast enough to eliminate motion blur, so 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/blur.png" width="400">
 
 #### Small ROI:
-Some animals are small or far from the camera, and can be difficult to spot even for humans.  The example image has a mouse on a brance to the center right of the frame.
+Some animals are small or far from the camera, and can be difficult to spot even for humans.  The example image has a mouse on a branch to the center right of the frame.
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/smallroi.png" width="400">
 
