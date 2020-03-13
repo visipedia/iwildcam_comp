@@ -104,7 +104,7 @@ Download the dataset files here:
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
       * Running `md5sum metadata.zip` should produce `3050b2a641ebef259ee73e1476e5e6ae`
   * iWildCam Remote Sensing Data (37GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam_rs_npy.tar.gz)
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
   * iNaturalist 2017 subset of images from our classes (2.2GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2017.tar.gz)
