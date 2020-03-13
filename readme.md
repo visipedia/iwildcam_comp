@@ -107,16 +107,16 @@ Download the dataset files here:
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
   * iNaturalist 2017 subset of images from our classes (2.2GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2017.tar.gz)
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2017.tar.gz)
       * Running `md5sum inaturalist_2017.tar.gz` should produce `bf9f18c0bc0169c243a8958d3705a0b9`
   * iNaturalist 2017 subset metadata
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
       * Running `md5sum inaturalist_2017_to_iwildcam_train.json` should produce `8664e8f16596995aae3a612d56e6426d`
   * iNaturalist 2018 subset of images from our classes (1.5GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/inaturalist_2018.tar.gz)
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2018.tar.gz)
       * Running `md5sum inaturalist_2018.tar.gz` should produce `44c0d20abefb27ec1555bd451d4c8904`
   * iNaturalist 2018 subset metadata
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
       * Running `md5sum inaturalist_2018_to_iwildcam_train.json` should produce `dcdc925a494cb0e58daf9201eb69f595`
 <!---      
 We also provide a smaller version of the camera trap datasets where the image width is resized to 1024 pixels:
