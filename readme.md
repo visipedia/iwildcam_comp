@@ -134,7 +134,7 @@ The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone an
 
 Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
-We have run the detector over the three datasets, and provide the top 100 boxes and associated confidences along with the metadata for WCS. Detections are provided in the following format: 
+We have run the detector over the WCS dataset, and provide the top 100 boxes and associated confidences along with the metadata. Detections are provided in the following format: 
 ```
 {
   'images':[image],
