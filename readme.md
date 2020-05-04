@@ -17,7 +17,7 @@ We are using Kaggle to host the leaderboard. Competition page [here](https://www
 |||
 |------|---------------|
 Competition Starts |March 9, 2020|
-Submission Deadline|May 11, 2020|
+Submission Deadline|May 26, 2020|
 
 
 ## Details and Evaluation
