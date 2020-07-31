@@ -98,6 +98,9 @@ By downloading this dataset you agree to the following terms:
 
 ## Data
 
+Download the Caltech Camera Traps dataset, which was used for the iWildCam 2018 Competition, at [LILA.science](http://lila.science/datasets/caltech-camera-traps).
+
+<!---
 Download the dataset files here:
   * Training and validation images 50.43GB zipped  
       * Links for different parts of the world:
@@ -117,7 +120,6 @@ Download the dataset files here:
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/iwildcam2018_annotations.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/iwildcam2018_annotations.tar.gz)
     * Running `md5sum iwildcam2018_annotations.tar.gz` should produce `62437e267340c0a0ccc801eb9a041564`
-
 We also provide a smaller version of the dataset where the image width is resized to 1024 pixels:
   * Smaller training and validation images 20.23GB
       * Links for different parts of the world:
@@ -131,6 +133,7 @@ We also provide a smaller version of the dataset where the image width is resize
         * [Asia](https://storage.googleapis.com/iwildcam_2018_asia/test_sm.tar.gz)
         * [Europe](https://storage.googleapis.com/iwildcam_2018_eu/test_sm.tar.gz)
     * Running `md5sum test.tar.gz` should produce `9a6257a3ac7d298ef5bdc324a3e0efc5`
+--->
  
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
