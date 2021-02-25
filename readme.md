@@ -22,7 +22,7 @@ Submission Deadline|May 31, 2021|
 
 ## Details and Evaluation
 
-The WCS training set contains 217,959 images from 441 locations, and the WCS test set contains 62,894 images from 111 locations. These 552 locations are spread across the globe. A location ID (`location`) is given for each image.
+The WCS training set contains 206,710 images from 441 locations, and the WCS test set contains 61,104 images from 111 locations. These 552 locations are spread across the globe. A location ID (`location`) is given for each image.
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, and iNaturalist 2019 competition datasets. As a courtesy, we have curated all the images from these datasets containing classes that might be in the test set and mapped them into the iWildCam categories. Note that these curated images come only from the iNaturalist 2017 and iNaturalist 2018 datasets because there are no common classes between the iNaturalist 2019 dataset and the WCS dataset. However, participants are still free to use the iNaturalist 2019 data if they wish.
 
