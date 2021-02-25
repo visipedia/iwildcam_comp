@@ -1,23 +1,23 @@
 ![Banner](https://rawgit.com/visipedia/iwildcam_comp/2020/assets/iwildcam2020header.jpg)
 
-# iWildCam 2020
+# iWildCam 2021
 Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species. We have recently been making strides towards automatic species classification in camera trap images. However, as we try to expand the scope of these models we are faced with an interesting problem: how do we train models that perform well on new (unseen during training) camera trap locations? Can we leverage data from other modalities, such as citizen science data and remote sensing data?
 
 In order to tackle this problem, we have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species in the test cameras correctly. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
-This is an FGVCx competition as part of the [FGVC7](https://sites.google.com/view/fgvc7/home) workshop at [CVPR 2020](http://cvpr2020.thecvf.com/), and is sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) and [Wildlife Insights](https://www.wildlifeinsights.org/). Please open an issue if you have questions or problems with the dataset.
+This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/view/fgvc7/home) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/), and is sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) and [Wildlife Insights](https://www.wildlifeinsights.org/). Please open an issue if you have questions or problems with the dataset.
 
-You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), and the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md).
+You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md), and the iWildCam 2020 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc7/overview).
+We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc8/overview).
 
 
 ## Dates
 |||
 |------|---------------|
-Competition Starts |March 9, 2020|
-Submission Deadline|May 26, 2020|
+Competition Starts |March 8, 2021|
+Submission Deadline|May 31, 2021|
 
 
 ## Details and Evaluation
@@ -26,7 +26,7 @@ The WCS training set contains 217,959 images from 441 locations, and the WCS tes
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, and iNaturalist 2019 competition datasets. As a courtesy, we have curated all the images from these datasets containing classes that might be in the test set and mapped them into the iWildCam categories. Note that these curated images come only from the iNaturalist 2017 and iNaturalist 2018 datasets because there are no common classes between the iNaturalist 2019 dataset and the WCS dataset. However, participants are still free to use the iNaturalist 2019 data if they wish.
 
-This year we are providing Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
+We provide Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
 
 Submissions will be evaluated based on their categorization accuracy.
 
@@ -156,6 +156,11 @@ detection{
   'conf': float
 }
 ```
+
+## Class-agnostic Segmentation Model
+We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit.
+
+We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box 
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
