@@ -16,7 +16,7 @@ We are using Kaggle to host the leaderboard. Competition page [here](https://www
 ## Dates
 |||
 |------|---------------|
-Competition Starts |March 8, 2021|
+Competition Starts |March 10, 2021|
 Submission Deadline|May 31, 2021|
 
 
@@ -95,14 +95,14 @@ The `id` column corresponds to the test image id. The `animal_class` is an integ
 ## Data
 Download the dataset files here:
   * WCS training images (84GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
-      * Running `md5sum train.zip` should produce `881d703639ce1df034e32fee1222bdcb`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/train.zip)
+      * Running `md5sum train.zip` should produce `xxx`
   * WCS test images (25GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
-      * Running `md5sum test.zip` should produce `adac3be1b45e12e062299615386cae05`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/test.zip)
+      * Running `md5sum test.zip` should produce `xxx`
   * WCS annotations and MegaDetector Results
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
-      * Running `md5sum metadata.zip` should produce `3050b2a641ebef259ee73e1476e5e6ae`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
+      * Running `md5sum metadata.zip` should produce `xxx`
   * iWildCam Remote Sensing Data (37GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -156,11 +156,11 @@ detection{
   'conf': float
 }
 ```
-
+<!--- 
 ## Class-agnostic Segmentation Model
 We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit.
-
 We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box 
+--->
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
