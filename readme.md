@@ -32,35 +32,26 @@ We provide Landsat-8 multispectral imagery for each camera location as supplemen
 
 Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), where each column represents a species, with the value representing a predicted count for that species.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/changesovertime.png)
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png)
 
 We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/changesovertime.png)
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png)
 
 ## Guidelines
 
 The general rule is that participants should only use the provided training images for training models to classify the test images. Participants are allowed to use the iNaturalist 2017-2019 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Models pretrained on standard computer vision datasets may be used to construct the algorithms (e.g. ImageNet pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints, counts) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
 
 
 ## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to its corresponding category label. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the COCO-CameraTraps annotation format and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to its corresponding category label. We do not provide any count labels on training data. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
-  "info" : info,
   "images" : [image],
   "categories" : [category],
   "annotations" : [annotation]
-}
-
-info{
-  "year" : int,
-  "version" : str,
-  "description" : str,
-  "contributor" : str
-  "date_created" : datetime
 }
 
 image{
@@ -70,6 +61,7 @@ image{
   "file_name" : str,
   "rights_holder" : str,
   "location": int,
+  "sub_location": int,
   "datetime": datetime,
   "seq_id": str,
   "seq_num_frames": int,
