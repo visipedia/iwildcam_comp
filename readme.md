@@ -101,10 +101,10 @@ Download the dataset files here:
       * Running `md5sum train.zip` should produce `8c1c8e4bc699c16072ea0ff31ce7967a`
   * WCS test images (25GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/test.zip)
-      * Running `md5sum test.zip` should produce `xxx`
+      * Running `md5sum test.zip` should produce `461a9c211058a8c644ec915ae57beafe`
   * WCS annotations and MegaDetector Results
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
-      * Running `md5sum metadata.zip` should produce `xxx`
+      * Running `md5sum metadata.zip` should produce `a0a1a0d2eb0347cd9710adf3677cf5e1`
   * iWildCam Remote Sensing Data (37GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -130,13 +130,11 @@ We also provide a smaller version of the camera trap datasets where the image wi
        * Running md5sum `test_small.zip` should produce `70f68298f4390353e05a50f8b6e122f5`
 --->      
 ## Camera Trap Animal Detection Model
-We are also providing a general animal detection model which competitors are free to use as they see fit.
+We also allow use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md) a general and robust camera trap detection model which competitors are free to use as they see fit. Megadetector V3 detects `animal` and `human` classes, while the MegaDetector V4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded [here](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md#downloading-the-models).
 
-The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone and atrous convolution.  It can be downloaded [here](https://lilablobssc.blob.core.windows.net/models/camera_traps/megadetector/megadetector_v2.pb).
+Sample code for running the megaDetector detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
-Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
-
-We have run the detector over the WCS dataset, and provide the top 100 boxes and associated confidences along with the metadata. Detections are provided in the following format: 
+We have run MegaDetector V3 over the WCS dataset, and provide the top 100 boxes and associated confidences along with the metadata. Detections are provided in the following format: 
 ```
 {
   'images':[image],
