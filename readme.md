@@ -218,4 +218,4 @@ By downloading iNaturalist data you agree to the terms outlined by [iNaturalist]
 
 ### Acknowledgements
 
-Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth.
+Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth. Count annotations on the test set were generously provided by [Centaur Labs](https://www.centaurlabs.com/).
