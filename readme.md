@@ -104,7 +104,7 @@ Download the dataset files here:
       * Running `md5sum test.zip` should produce `461a9c211058a8c644ec915ae57beafe`
   * WCS annotations and MegaDetector Results
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
-      * Running `md5sum metadata.zip` should produce `a0a1a0d2eb0347cd9710adf3677cf5e1`
+      * Running `md5sum metadata.zip` should produce `e67aa5c935636360b017dfbf4c8e716f`
   * iWildCam Remote Sensing Data (37GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
