@@ -30,13 +30,15 @@ You may also choose to use supplemental training data from the iNaturalist 2017,
 
 We provide Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
 
-Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), where each column represents a species, with the value representing a predicted count for that species.
+Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), 
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png)
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="100">
+
+where each column `i` represents a species, each row `j` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
 We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png)
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png" width="300">
 
 ## Guidelines
 
