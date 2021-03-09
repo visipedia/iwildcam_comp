@@ -34,7 +34,7 @@ Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCR
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="400">
 
-where each column `i` represents a species, each row `j` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
+where each column `j` represents a species, each row `i` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
 We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
