@@ -32,13 +32,13 @@ We provide Landsat-8 multispectral imagery for each camera location as supplemen
 
 Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), 
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="100">
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="400">
 
 where each column `i` represents a species, each row `j` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
 We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png" width="300">
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png" width="600">
 
 ## Guidelines
 
@@ -85,14 +85,14 @@ The `bbox` units are in pixels, the origin is the upper left hand corner, and th
 
 ## Submission Format
 
-The submission format for the competition is a csv file with the following format:
+Submission for the competition is a csv file with the following format:
 ```
-id,animal_class
-58857ccf-23d2-11e8-a6a3-ec086b02610b,1
-591e4006-23d2-11e8-a6a3-ec086b02610b,5
+Id,Predicted2,Predicted3,[...],Predicted571
+58857ccf-23d2-11e8-a6a3-ec086b02610b,0,5,[...],0
+591e4006-23d2-11e8-a6a3-ec086b02610b,1,0,[...],3
 ...
 ```
-The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
+The `Id` column corresponds to the test sequence id. `Predicted2` holds an integer value that indicates the number of individuals of species 2 in each test sequence. If you predict there are no animals in the sequence, the entire row after the sequence ID should be populated with `0` values.
 
 ## Data
 Download the dataset files here:
