@@ -5,7 +5,7 @@ Camera Traps enable the automatic collection of large quantities of image data. 
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/train_examples_small.gif" width="400"/>
 
-We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species in the test cameras correctly. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
+We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species ans count individual animals across sequences in the test cameras. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
 This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/corp/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/), and is sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) and [Wildlife Insights](https://www.wildlifeinsights.org/). Please open an issue if you have questions or problems with the dataset.
 
@@ -19,18 +19,24 @@ We are using Kaggle to host the leaderboard. Competition page [here](https://www
 |||
 |------|---------------|
 Competition Starts |March 10, 2021|
-Submission Deadline|May 31, 2021|
+Submission Deadline|May 26, 2021|
 
 
 ## Details and Evaluation
 
-The WCS training set contains 206,710 images from 441 locations, and the WCS test set contains 61,104 images from 111 locations. These 552 locations are spread across the globe. A location ID (`location`) is given for each image.
+The iWildCam 2021 WCS training set contains 203,314 images from 323 locations, and the WCS test set contains 60,214 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. 
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, and iNaturalist 2019 competition datasets. As a courtesy, we have curated all the images from these datasets containing classes that might be in the test set and mapped them into the iWildCam categories. Note that these curated images come only from the iNaturalist 2017 and iNaturalist 2018 datasets because there are no common classes between the iNaturalist 2019 dataset and the WCS dataset. However, participants are still free to use the iNaturalist 2019 data if they wish.
 
 We provide Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
 
-Submissions will be evaluated based on their categorization accuracy.
+Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), where each column represents a species, with the value representing a predicted count for that species.
+
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/changesovertime.png)
+
+We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
+
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/changesovertime.png)
 
 ## Guidelines
 
