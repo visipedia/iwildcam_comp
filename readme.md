@@ -98,7 +98,7 @@ The `Id` column corresponds to the test sequence id. `Predicted2` holds an integ
 Download the dataset files here:
   * WCS training images (84GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/train.zip)
-      * Running `md5sum train.zip` should produce `xxx`
+      * Running `md5sum train.zip` should produce `8c1c8e4bc699c16072ea0ff31ce7967a`
   * WCS test images (25GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/test.zip)
       * Running `md5sum test.zip` should produce `xxx`
