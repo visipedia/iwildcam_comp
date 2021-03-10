@@ -13,7 +13,12 @@ We have prepared a challenge where the training data and test data are from diff
 ## Acknowledgements
 This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/corp/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/). We would like to acknowledge [WCS](https://www.wcs.org/) for providing the camera trap data, [Centaur Labs](https://www.centaurlabs.com/) for working with us pro bono to annotate the species counts on the test data, and [Microsoft AI4Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) for hosting our external datasets on Azure. 
 
-You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md), and the iWildCam 2020 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md).
+## Previous iWildCam Competitions
+[iWildCam 2018](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md)
+
+[iWildCam 2019](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md)
+
+[iWildCam 2020](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md)
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc8/overview).
