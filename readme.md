@@ -1,4 +1,4 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/iwildcam2021banner.png)
+![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam2021banner.png)
 
 # iWildCam 2021
 Camera Traps enable the automatic collection of large quantities of image data. Ecologists all over the world use camera traps to monitor biodiversity and population density of animal species. In order to estimate the abundance and density of species in camera trap data, ecologists need to know not just which species were seen, but also how many of each species were seen. However, because images are taken in motion-triggered bursts to increase the likelihood of capturing the animal(s) of interest, object detection alone is not sufficient as it could lead to over- or under-counting, for example, if you get 3 images taken at one frame per second, and in the first you see 3 gazelles, in the second you see 5 gazelles, and in the last you see 4 gazelles, how many total gazelles have you seen? This is more challenging than strictly detecting and categorizing species, as it requires reasoning and tracking of individuals across sparse temporal samples. 
@@ -35,13 +35,13 @@ We provide Landsat-8 multispectral imagery for each camera location as supplemen
 
 Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), 
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="400">
+<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/MCRMSE.png" width="400">
 
 where each column `j` represents a species, each row `i` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
 We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png" width="600">
+<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/scrsse.png" width="600">
 
 ## Guidelines
 
