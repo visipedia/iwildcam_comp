@@ -11,14 +11,7 @@ Check out a few hard examples from the training set:
 We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species and count individual animals across sequences in the test cameras. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
 ## Acknowledgements
-This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/corp/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/). We would like to acknowledge [WCS](https://www.wcs.org/) for providing the camera trap data, [Centaur Labs](https://www.centaurlabs.com/) for working with us pro bono to annotate the species counts on the test data, and [Microsoft AI4Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) for hosting our external datasets on Azure. 
-
-## Previous iWildCam Competitions
-[iWildCam 2018](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md)
-
-[iWildCam 2019](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md)
-
-[iWildCam 2020](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md)
+This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/corp/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/). Data is primarily provided by the [Wildlife Conservation Society (WCS)](https://www.wcs.org/) and [iNaturalist](https://www.inaturalist.org/), and is hosted on Azure by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth). Count annotations on the test set were generously provided by [Centaur Labs](https://www.centaurlabs.com/).
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc8/overview).
@@ -225,6 +218,9 @@ By downloading Wildlife Conservation Society data or iWildCam Remote Sensing dat
 
 By downloading iNaturalist data you agree to the terms outlined by [iNaturalist](https://www.inaturalist.org/pages/terms).
 
-### Acknowledgements
+## Previous iWildCam Competitions
+[iWildCam 2018](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md)
 
-Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth. Count annotations on the test set were generously provided by [Centaur Labs](https://www.centaurlabs.com/).
+[iWildCam 2019](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md)
+
+[iWildCam 2020](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md)
