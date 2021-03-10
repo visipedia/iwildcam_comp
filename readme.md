@@ -14,7 +14,7 @@ We have prepared a challenge where the training data and test data are from diff
 This competition is part of the [FGVC8](https://sites.google.com/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/). Data is primarily provided by the [Wildlife Conservation Society (WCS)](https://www.wcs.org/) and [iNaturalist](https://www.inaturalist.org/), and is hosted on Azure by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth). Count annotations on the test set were generously provided by [Centaur Labs](https://www.centaurlabs.com/).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc8/overview).
+We are using Kaggle to host the leaderboard. Competition page is [here](https://www.kaggle.com/c/iwildcam2021-fgvc8).
 
 
 ## Dates
