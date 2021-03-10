@@ -1,58 +1,62 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/2020/assets/iwildcam2020header.jpg)
+![Banner](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/iwildcam2021banner.png)
 
-# iWildCam 2020
-Camera Traps (or Wild Cams) enable the automatic collection of large quantities of image data. Biologists all over the world use camera traps to monitor biodiversity and population density of animal species. We have recently been making strides towards automatic species classification in camera trap images. However, as we try to expand the scope of these models we are faced with an interesting problem: how do we train models that perform well on new (unseen during training) camera trap locations? Can we leverage data from other modalities, such as citizen science data and remote sensing data?
+# iWildCam 2021
+Camera Traps enable the automatic collection of large quantities of image data. Ecologists all over the world use camera traps to monitor biodiversity and population density of animal species. In order to estimate the abundance and density of species in camera trap data, ecologists need to know not just which species were seen, but also how many of each species were seen. However, because images are taken in motion-triggered bursts to increase the likelihood of capturing the animal(s) of interest, object detection alone is not sufficient as it could lead to over- or under-counting, for example, if you get 3 images taken at one frame per second, and in the first you see 3 gazelles, in the second you see 5 gazelles, and in the last you see 4 gazelles, how many total gazelles have you seen? This is more challenging than strictly detecting and categorizing species, as it requires reasoning and tracking of individuals across sparse temporal samples. 
 
-In order to tackle this problem, we have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species in the test cameras correctly. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
+<!--- 
+Check out a few hard examples from the training set:
+![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/train_examples_smaller.gif)
+--->
 
-This is an FGVCx competition as part of the [FGVC7](https://sites.google.com/view/fgvc7/home) workshop at [CVPR 2020](http://cvpr2020.thecvf.com/), and is sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) and [Wildlife Insights](https://www.wildlifeinsights.org/). Please open an issue if you have questions or problems with the dataset.
+We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species and count individual animals across sequences in the test cameras. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by WCS), (ii) iNaturalist 2017-2019 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. On the competition [GitHub page](https://github.com/visipedia/iwildcam_comp) we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
-You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), and the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md).
+This is an FGVCx competition as part of the [FGVC8](https://sites.google.com/corp/view/fgvc8) workshop at [CVPR 2021](http://cvpr2021.thecvf.com/), and is sponsored by [Microsoft AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth), [Wildlife Insights](https://www.wildlifeinsights.org/), and [Centaur Labs](https://www.centaurlabs.com/). Please open an issue if you have questions or problems with the dataset.
+
+You can find the iWildCam 2018 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2018/readme.md), the iWildCam 2019 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2019/readme.md), and the iWildCam 2020 Competition [here](https://github.com/visipedia/iwildcam_comp/blob/master/2020/readme.md).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc7/overview).
+We are using Kaggle to host the leaderboard. Competition page [here](https://www.kaggle.com/c/iwildcam-2020-fgvc8/overview).
 
 
 ## Dates
 |||
 |------|---------------|
-Competition Starts |March 9, 2020|
-Submission Deadline|May 26, 2020|
+Competition Starts |March 10, 2021|
+Submission Deadline|May 26, 2021|
 
 
 ## Details and Evaluation
 
-The WCS training set contains 217,959 images from 441 locations, and the WCS test set contains 62,894 images from 111 locations. These 552 locations are spread across the globe. A location ID (`location`) is given for each image.
+The iWildCam 2021 WCS training set contains 203,314 images from 323 locations, and the WCS test set contains 60,214 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. 
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, and iNaturalist 2019 competition datasets. As a courtesy, we have curated all the images from these datasets containing classes that might be in the test set and mapped them into the iWildCam categories. Note that these curated images come only from the iNaturalist 2017 and iNaturalist 2018 datasets because there are no common classes between the iNaturalist 2019 dataset and the WCS dataset. However, participants are still free to use the iNaturalist 2019 data if they wish.
 
-This year we are providing Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
+We provide Landsat-8 multispectral imagery for each camera location as supplementary data. In particular, each site is associated with a series of patches collected between 2013 and 2019. The patches are extracted from a "Tier 1" Landsat product, which consists only of data that meets certain geometric and radiometric quality standards. Consequently, the number of patches per site varies from 39 to 406 (median: 147). Each patch is 200x200x9 pixels, covering an area of 6km^2 at a resolution of 30 meters / pixel across 9 spectral bands. Note that all patches for a given site are registered, but are not centered exactly at the camera location to protect the integrity of the site. 
 
-Submissions will be evaluated based on their categorization accuracy.
+Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), 
+
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/MCRMSE.png" width="400">
+
+where each column `j` represents a species, each row `i` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
+
+We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
+
+<img src="https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/scrsse.png" width="600">
 
 ## Guidelines
 
 The general rule is that participants should only use the provided training images for training models to classify the test images. Participants are allowed to use the iNaturalist 2017-2019 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Models pretrained on standard computer vision datasets may be used to construct the algorithms (e.g. ImageNet pretrained models). Please specify any and all external data and/or models used for training when uploading results.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints, counts) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
 
 
 ## Annotation Format
-We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to its corresponding category label. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the COCO-CameraTraps annotation format and add additional fields. Each training image has at least one associated annotation, containing a `category_id` that that maps the annotation to its corresponding category label. We do not provide any count labels on training data. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
-  "info" : info,
   "images" : [image],
   "categories" : [category],
   "annotations" : [annotation]
-}
-
-info{
-  "year" : int,
-  "version" : str,
-  "description" : str,
-  "contributor" : str
-  "date_created" : datetime
 }
 
 image{
@@ -62,6 +66,7 @@ image{
   "file_name" : str,
   "rights_holder" : str,
   "location": int,
+  "sub_location": int,
   "datetime": datetime,
   "seq_id": str,
   "seq_num_frames": int,
@@ -83,26 +88,26 @@ The `bbox` units are in pixels, the origin is the upper left hand corner, and th
 
 ## Submission Format
 
-The submission format for the competition is a csv file with the following format:
+Submission for the competition is a csv file with the following format:
 ```
-id,animal_class
-58857ccf-23d2-11e8-a6a3-ec086b02610b,1
-591e4006-23d2-11e8-a6a3-ec086b02610b,5
+Id,Predicted2,Predicted3,[...],Predicted571
+58857ccf-23d2-11e8-a6a3-ec086b02610b,0,5,[...],0
+591e4006-23d2-11e8-a6a3-ec086b02610b,1,0,[...],3
 ...
 ```
-The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
+The `Id` column corresponds to the test sequence id. `Predicted2` holds an integer value that indicates the number of individuals of species 2 in each test sequence. If you predict there are no animals in the sequence, the entire row after the sequence ID should be populated with `0` values.
 
 ## Data
 Download the dataset files here:
   * WCS training images (84GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/train.zip)
-      * Running `md5sum train.zip` should produce `881d703639ce1df034e32fee1222bdcb`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/train.zip)
+      * Running `md5sum train.zip` should produce `8c1c8e4bc699c16072ea0ff31ce7967a`
   * WCS test images (25GB zipped)
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/test.zip)
-      * Running `md5sum test.zip` should produce `adac3be1b45e12e062299615386cae05`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/test.zip)
+      * Running `md5sum test.zip` should produce `461a9c211058a8c644ec915ae57beafe`
   * WCS annotations and MegaDetector Results
-    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata.zip)
-      * Running `md5sum metadata.zip` should produce `3050b2a641ebef259ee73e1476e5e6ae`
+    * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
+      * Running `md5sum metadata.zip` should produce `e67aa5c935636360b017dfbf4c8e716f`
   * iWildCam Remote Sensing Data (37GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -128,13 +133,11 @@ We also provide a smaller version of the camera trap datasets where the image wi
        * Running md5sum `test_small.zip` should produce `70f68298f4390353e05a50f8b6e122f5`
 --->      
 ## Camera Trap Animal Detection Model
-We are also providing a general animal detection model which competitors are free to use as they see fit.
+We also allow use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md) a general and robust camera trap detection model which competitors are free to use as they see fit. Megadetector V3 detects `animal` and `human` classes, while the MegaDetector V4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded [here](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md#downloading-the-models).
 
-The model is a tensorflow Faster-RCNN model with Inception-Resnet-v2 backbone and atrous convolution.  It can be downloaded [here](https://lilablobssc.blob.core.windows.net/models/camera_traps/megadetector/megadetector_v2.pb).
+Sample code for running the megaDetector detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
-Sample code for running the detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
-
-We have run the detector over the WCS dataset, and provide the top 100 boxes and associated confidences along with the metadata. Detections are provided in the following format: 
+We have run MegaDetector V3 over the WCS dataset, and provide the top 100 boxes and associated confidences along with the metadata. Detections are provided in the following format: 
 ```
 {
   'images':[image],
@@ -156,6 +159,11 @@ detection{
   'conf': float
 }
 ```
+<!--- 
+## Class-agnostic Segmentation Model
+We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit.
+We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box 
+--->
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
@@ -213,4 +221,4 @@ By downloading iNaturalist data you agree to the terms outlined by [iNaturalist]
 
 ### Acknowledgements
 
-Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth.
+Data is primarily provided by the Wildlife Conservation Society (WCS), iNaturalist, the U.S. Geological Survey, and Microsoft AI for Earth. Count annotations on the test set were generously provided by [Centaur Labs](https://www.centaurlabs.com/).
