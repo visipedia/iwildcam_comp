@@ -28,7 +28,7 @@ Submission Deadline|May 28, 2021|
 
 ## Details and Evaluation
 
-The iWildCam 2021 WCS training set contains 203,314 images from 323 locations, and the WCS test set contains 60,214 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. 
+The iWildCam 2021 WCS training set contains 203,314 images from 323 locations, and the WCS test set contains 60,214 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger, and after motion is detected the camera will take a sequence of photos (from 1 - 10 images depending on the camera). We provide a `sequence_id` for each sequence, and the target task is to count the number of individuals of each species across each test sequence. 
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, iNaturalist 2019, and iNaturalist 2021 competition datasets. As a courtesy, we have curated all the images from iNaturalist 2017-2018 datasets containing classes that might be in the test set and mapped them into the iWildCam categories.
 
@@ -40,7 +40,7 @@ Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCR
 
 where each column `j` represents a species, each row `i` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
-We selected this metric out of the options provided by kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
+We selected this metric out of the options provided by Kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/scrsse.png" width="600">
 
