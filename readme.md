@@ -134,7 +134,7 @@ We also provide a smaller version of the camera trap datasets where the image wi
        * Running md5sum `test_small.zip` should produce `70f68298f4390353e05a50f8b6e122f5`
 --->      
 ## Camera Trap Animal Detection Model
-We also allow use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md) a general and robust camera trap detection model which competitors are free to use as they see fit. Megadetector V3 detects `animal` and `human` classes, while the MegaDetector V4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded [here](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md#downloading-the-models).
+We also allow use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md), paper [here](https://arxiv.org/abs/1907.06772), a general and robust camera trap detection model which competitors are free to use as they see fit. Megadetector V3 detects `animal` and `human` classes, while the MegaDetector V4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded [here](https://github.com/microsoft/CameraTraps/blob/master/megadetector.md#downloading-the-models).
 
 Sample code for running the megaDetector detector over a folder of images can be found [here](https://github.com/Microsoft/CameraTraps/blob/master/detection/run_tf_detector.py).
 
