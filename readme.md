@@ -3,7 +3,7 @@
 # iWildCam 2021
 Camera Traps enable the automatic collection of large quantities of image data. Ecologists all over the world use camera traps to monitor biodiversity and population density of animal species. In order to estimate the abundance (how many are there) and population density of species in camera trap data, ecologists need to know not just which species were seen, but also how many of each species were seen. However, because images are taken in motion-triggered bursts to increase the likelihood of capturing the animal(s) of interest, object detection alone is not sufficient as it could lead to over- or under-counting. For example, if you get 3 images taken at one frame per second, and in the first you see 3 gazelles, in the second you see 5 gazelles, and in the last you see 4 gazelles, how many total gazelles have you seen? This is more challenging than strictly detecting and categorizing species, as it requires reasoning and tracking of individuals across sparse temporal samples. For example, in the below sequence of images there are 6 baboons.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/master/assets/monkey_count.png)
+<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/monkey_count.png" width="600">
 
 <!--- 
 Check out a few hard examples from the training set:
