@@ -46,7 +46,7 @@ We selected this metric out of the options provided by Kaggle in order to captur
 
 ## Guidelines
 
-The general rule is that participants should only use the provided training images for training models to classify the test images. Participants are allowed to use the iNaturalist 2017-2019 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Models pretrained on standard computer vision datasets may be used to construct the algorithms (e.g. ImageNet pretrained models). Please specify any and all external data and/or models used for training when uploading results.
+The general rule is that participants should only use the provided training images for training models to classify the test images. Participants are allowed to use the iNaturalist 2017-2021 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models trained on specific public datasets may be used to construct the algorithms. We specifically allow ImageNet pretrained models, COCO pretrained models, iNaturalist 2017-2021 pretrained models, and the Microsoft AI for Earth MegaDetector. If you have questions about whether a specific pretrained model is allowed, please ask.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints, counts) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
 
