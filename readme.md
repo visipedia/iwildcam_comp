@@ -85,7 +85,6 @@ annotation{
   "category_id" : int
 }
 ```
-The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
 
 ## Submission Format
 
@@ -153,7 +152,7 @@ image{
 }
 
 detection{
-  # bounding boxes are in absolute, floating-point coordinates, with the origin at the upper-left
+  # bounding boxes are in normalized, floating-point coordinates, with the origin at the upper-left
   'bbox' : [x, y, width, height], 
   # note that the categories returned by the detector are not the categories in the WCS dataset
   'category': str,
