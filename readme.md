@@ -178,7 +178,7 @@ will be stored in the `instance_masks/<ID>.png`. The instance mask details
 are stored in a single channel PNG image. The pixels in the PNG image
 are 1-indexed and indicate which detection they belong to (`0` is reserved
 as background). The indices follow the same order as the detections in
-MegaDetectors output (addressed by `['images']['detections']`). 
+MegaDetector's output (addressed by `['images']['detections']`). 
 When there are overlapping instances, we only preserve the ID of
 the instance with the higher detection confidence (`'conf'` field).
 
