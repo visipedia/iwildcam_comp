@@ -159,11 +159,35 @@ detection{
   'conf': float
 }
 ```
-<!--- 
+
 ## Class-agnostic Segmentation Model
 We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit.
-We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box 
---->
+We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box.
+For the semgnetation model we use the [DeepMAC](https://google.github.io/deepmac/). DeepMAC provides
+class agnostic instance segmentation masks and achieves state-of-the-art performance in the partially supervised instance segmentation task.
+Below, we show a sample visualization of instance masks.
+
+![Instance Masks](https://raw.githubusercontent.com/vighneshbirodkar/iwildcam_comp/mask_format/assets/mask_visualization.png)
+
+### Format details
+We prodive an instance mask for each detected object by MegaDetector
+(which is stored in `metadata/iwildcam2021_megadetector_results.json`).
+For each image in the `train` or `test` direcotry with name `<ID>.jpg`, if there
+are any objects detected in the image, its corresponding instance masks
+will be stored in the `instance_masks/<ID>.png`. The instance mask details
+are stored in a single channel PNG image. The pixels in the PNG image
+are 1-indexed and indicate which detection they belong to (`0` is reserved
+as background). The indices follow the same order as the detections in
+MegaDetectors output (addressed by `['images']['detections']`). 
+When there are overlapping instances, we only preserve the ID of
+the instance with the higher detection confidence (`'conf'` field).
+
+### Other Useful links 
+* [DeepMAC paper](https://arxiv.org/abs/2104.00613)
+* [Notebook](https://www.kaggle.com/vighneshbgoogle/iwildcam-visualize-instance-masks) for visualizing instance masks.
+* [DeepMAC trained model](http://download.tensorflow.org/models/object_detection/tf2/20210329/deepmac_1024x1024_coco17.tar.gz) in TF saved model format.
+* [Colab notebook](https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/deepmac_colab.ipynb) for using DeepMAC trained model on user-specified boxes.
+
 
 ## Data Challenges
 Camera trap data provides several challenges that can make it difficult to achieve accurate results.  
