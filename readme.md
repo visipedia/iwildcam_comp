@@ -163,9 +163,9 @@ detection{
 ## Class-agnostic Segmentation Model
 We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit.
 We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector, and provide the segmentation for each box.
-For the semgnetation model we use the [DeepMAC](https://google.github.io/deepmac/). DeepMAC provides
-class agnostic instance segmentation masks and achieves state-of-the-art performance in the partially supervised instance segmentation task.
-Below, we show a sample visualization of instance masks.
+The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which provides
+class agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks.
+Below, we show a sample visualization of instance masks on WCS.
 
 ![Instance Masks](https://raw.githubusercontent.com/vighneshbirodkar/iwildcam_comp/mask_format/assets/mask_visualization.png)
 
