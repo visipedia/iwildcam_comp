@@ -185,7 +185,7 @@ the instance with the higher detection confidence (`'conf'` field).
 ### Other Useful links 
 * [DeepMAC paper](https://arxiv.org/abs/2104.00613)
 * [Notebook](https://www.kaggle.com/vighneshbgoogle/iwildcam-visualize-instance-masks) for visualizing instance masks.
-* [DeepMAC trained model](http://download.tensorflow.org/models/object_detection/tf2/20210329/deepmac_1024x1024_coco17.tar.gz) in TF saved model format ( trained on COCO).
+* [DeepMAC trained model](http://download.tensorflow.org/models/object_detection/tf2/20210329/deepmac_1024x1024_coco17.tar.gz) in TF saved model format (trained on COCO).
 * [Colab notebook](https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/deepmac_colab.ipynb) for using DeepMAC trained model on user-specified boxes.
 
 
