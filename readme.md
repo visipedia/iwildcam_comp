@@ -108,7 +108,7 @@ Download the dataset files here:
   * WCS annotations and MegaDetector Results
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
       * Running `md5sum metadata.zip` should produce `e67aa5c935636360b017dfbf4c8e716f`
-  * WCS location GPS coordinates
+  * WCS location GPS coordinates [link broken, to be updated soon]
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/gps_locations.json)
       * Running `md5sum gps_locations.json` should produce `8fba7f096bd5b36f8f4a6159d740efcc`
   * iWildCam Remote Sensing Data (37GB zipped)
