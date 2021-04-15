@@ -108,9 +108,9 @@ Download the dataset files here:
   * WCS annotations and MegaDetector Results
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/metadata.zip)
       * Running `md5sum metadata.zip` should produce `e67aa5c935636360b017dfbf4c8e716f`
-  * WCS location GPS coordinates [link broken, to be updated soon]
+  * WCS location GPS coordinates
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/gps_locations.json)
-      * Running `md5sum gps_locations.json` should produce `8fba7f096bd5b36f8f4a6159d740efcc`
+      * Running `md5sum gps_locations.json` should produce `3790fa2bbb138a854632f7ee4c47d789`
   * iWildCam Remote Sensing Data (37GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
       * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -184,6 +184,9 @@ as background). The indices follow the same order as the detections in
 MegaDetector's output (addressed by `['images']['detections']`). 
 When there are overlapping instances, we only preserve the ID of
 the instance with the higher detection confidence (`'conf'` field).
+
+### Obfuscated GPS Locations of cameras
+We provide GPS locations for the majority of the camera traps, obfuscated within 1km for security and privacy reasons. Some of the obfuscated GPS locations (all from one country) were not released at the request of WCS, but knowing that the locations not listed in the `gps_locations.json` file are all from the same country should help competitors narrow down the set of possible species for those locations based on what is seen in the training data.
 
 ### Other Useful links 
 * [Notebook](https://www.kaggle.com/vighneshbgoogle/iwildcam-visualize-instance-masks) for visualizing iWildCam instance masks.
