@@ -5,10 +5,10 @@ Camera Traps enable the automatic collection of large quantities of image data. 
 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/monkey_count.png" width="1000">
 
-<!--- 
+
 Check out a few hard examples from the training set:
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/iwildcam2021/assets/train_examples_smaller.gif)
---->
+![image](assets/train_examples_smaller.gif)
+
 
 We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species and count individual animals across sequences in the test cameras. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by the [Wildlife Conservation Society (WCS)](https://www.wcs.org/)), (ii) iNaturalist 2017-2021 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. Below we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
