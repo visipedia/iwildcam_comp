@@ -6,7 +6,9 @@ Camera Traps enable the automatic collection of large quantities of image data. 
 <img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/monkey_count.png" width="1000">
 
 
-Check out a few hard examples from the training set:
+### Check out a few hard examples from the training set:
+
+
 ![image](assets/train_examples_smaller.gif)
 
 
