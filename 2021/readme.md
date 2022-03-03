@@ -1,15 +1,14 @@
-![Banner](https://rawgit.com/visipedia/iwildcam_comp/master/assets/iwildcam2021banner.png)
+![Banner](/assets/iwildcam2021banner.png)
 
 # iWildCam 2021
 Camera Traps enable the automatic collection of large quantities of image data. Ecologists all over the world use camera traps to monitor biodiversity and population density of animal species. In order to estimate the abundance (how many are there) and population density of species in camera trap data, ecologists need to know not just which species were seen, but also how many of each species were seen. However, because images are taken in motion-triggered bursts to increase the likelihood of capturing the animal(s) of interest, object detection alone is not sufficient as it could lead to over- or under-counting. For example, if you get 3 images taken at one frame per second, and in the first you see 3 gazelles, in the second you see 5 gazelles, and in the last you see 4 gazelles, how many total gazelles have you seen? This is more challenging than strictly detecting and categorizing species, as it requires reasoning and tracking of individuals across sparse temporal samples. For example, in the below sequence of images there are 6 baboons.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/monkey_count.png" width="1000">
+<img src="/assets/monkey_count.png" width="1000">
 
 
 ### Check out a few hard examples from the training set:
 
-![image](../assets/train_examples_smaller.gif)
-
+![image](/assets/train_examples_smaller.gif)
 
 We have prepared a challenge where the training data and test data are from different cameras spread across the globe. The set of species seen in each camera overlap, but are not identical. The challenge is to classify species and count individual animals across sequences in the test cameras. To explore multimodal solutions, we allow competitors to train on the following data: (i) our camera trap training set (data provided by the [Wildlife Conservation Society (WCS)](https://www.wcs.org/)), (ii) iNaturalist 2017-2021 data, and (iii) multispectral imagery (from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8)) for each of the camera trap locations. Below we provide the multispectral data, a taxonomy file mapping our classes into the iNat taxonomy, a subset of iNat data mapped into our class set, and a camera trap detection model (the MegaDetector) along with the corresponding detections.
 
@@ -37,13 +36,13 @@ We provide Landsat-8 multispectral imagery for each camera location as supplemen
 
 Submissions will be evaluated using Mean Columnwise Root Mean Squared Error (MCRMSE), 
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/MCRMSE.png" width="400">
+<img src="/assets/MCRMSE.png" width="400">
 
 where each column `j` represents a species, each row `i` represents a sequence, `x_ij` is the predicted count for that species in that sequence, and `y_ij` is the ground truth count.
 
 We selected this metric out of the options provided by Kaggle in order to capture both species identification mistakes and count mistakes, and to ensure false predictions on empty sequences would contribute to the error. Because many sequences are empty in camera trap data due to false triggers and many species are rare, the error from this normalized metric looks quite small, while the actual errors in counts are still large. To convert the metric to something more interpretable from an ecological standpoint, you can un-normalize the metric from MCRMSE to the Summed Columnwise Root Summed Squared Error (SCRSSE) by multiplying by the number of categories and the square root of the number of test sequences.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/scrsse.png" width="600">
+<img src="/assets/scrsse.png" width="600">
 
 ## Guidelines
 
@@ -171,7 +170,7 @@ The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which 
 class agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks.
 Below, we show a sample visualization of instance masks on WCS.
 
-![Instance Masks](https://raw.githubusercontent.com/vighneshbirodkar/iwildcam_comp/mask_format/assets/mask_visualization.png)
+![Instance Masks](/assets/mask_visualization.png)
 
 ### Format details
 We prodive an instance mask for each detected object by MegaDetector
@@ -202,44 +201,44 @@ Camera trap data provides several challenges that can make it difficult to achie
 #### Illumination:
 Images can be poorly illuminated, especially at night.  The example below contains a skunk to the center left of the frame.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/illumination.png" width="400">
+<img src="/assets/illumination.png" width="400">
 
 #### Motion Blur:
 The shutter speed of the camera is not fast enough to eliminate motion blur, so animals are sometimes blurry. The example contains a blurred coyote.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/blur.png" width="400">
+<img src="/assets/blur.png" width="400">
 
 #### Small ROI:
 Some animals are small or far from the camera, and can be difficult to spot even for humans.  The example image has a mouse on a branch to the center right of the frame.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/smallroi.png" width="400">
+<img src="/assets/smallroi.png" width="400">
 
 #### Occlusion:
 Animals can be occluded by vegetation or the edge of the frame.  This example shows a location where weeds grew in front of the camera, obscuring the view.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/occlusion.png" width="400">
+<img src="/assets/occlusion.png" width="400">
 
 #### Perspective:
 Sometimes animals come very close to the camera, causing a forced perspective.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/perspective.png" width="400">
+<img src="/assets/perspective.png" width="400">
 
 
 #### Weather Conditions:
 Poor weather, including rain, snow, or dust, can obstruct the lens and cause false triggers.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/weather.png" width="400">
+<img src="/assets/weather.png" width="400">
 
 #### Camera Malfunctions:
 Sometimes the camera malfunctions, causing strange discolorations.
 
-<img src="https://rawgit.com/visipedia/iwildcam_comp/master/assets/malfunctions.png" width="400">
+<img src="/assets/malfunctions.png" width="400">
 
 #### Temporal Changes: 
 
 At any given location, the background changes over time as the seasons change.  Below, you can see a single loction at three different points in time.
 
-![alt text](https://rawgit.com/visipedia/iwildcam_comp/master/assets/changesovertime.png)
+![alt text](/assets/changesovertime.png)
 
 #### Non-Animal Variability:
 What causes the non-animal images to trigger varies based on location.  Some locations contain lots of vegetation, which can cause false triggers as it moves in the wind.  Others are near roadways, so can be triggered by cars or bikers.  
