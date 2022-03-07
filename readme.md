@@ -16,7 +16,7 @@ This year our iWildCam competition will focus entirely on counting animals. We h
 
 1. Our camera trap training set — data provided by the [Wildlife Conservation Society (WCS)](https://www.wcs.org/).
 1. iNaturalist 2017-2021 data.
-1. Multispectral imagery from [Landsat 8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8) for each of the camera trap locations.
+1. Multispectral imagery from [Landsat-8](https://www.usgs.gov/land-resources/nli/landsat/landsat-8) for each of the camera trap locations.
 
 Below we provide the multispectral data, a taxonomy file mapping our classes into the iNaturalist taxonomy, a subset of the iNaturalist data mapped into our class set, a camera trap detection model (the [MegaDetector](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md)) along with the corresponding detections, and a class-agnostic instance segmentation model ([DeepMAC](https://google.github.io/deepmac/)) along with the segmentation masks for the MegaDetector's bounding boxes.
 
@@ -39,13 +39,13 @@ All deadlines are at 23:59 UTC on the corresponding day unless otherwise noted. 
 
 ## Competition Guidelines
 
-The general rule is that participants should only use the provided training images for training models to count animals in the test images. Participants are allowed to use the iNaturalist 2017-2021 competition datasets and the provided Landsat 8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models trained on specific public datasets may be used to construct the algorithms. We specifically allow ImageNet pretrained models, COCO pretrained models, iNaturalist 2017-2021 pretrained models, the Microsoft AI for Earth MegaDetector, and the DeepMAC instance segmentation model. If you have questions about whether a specific pretrained model is allowed, please ask.
+The general rule is that participants should only use the provided training images for training models to count animals in the test images. Participants are allowed to use the iNaturalist 2017-2021 competition datasets and the provided Landsat-8 imagery during training. We do not want participants crawling the web in search of additional data or using previous versions of this dataset. Pretrained models trained on specific public datasets may be used to construct the algorithms. We specifically allow ImageNet pretrained models, COCO pretrained models, iNaturalist 2017-2021 pretrained models, the Microsoft AI for Earth MegaDetector, and the DeepMAC instance segmentation model. If you have questions about whether a specific pretrained model is allowed, please ask.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints, counts) on the provided training sets. Participants are not allowed to collect annotations on the test set. Teams should specify any additional annotations they have collected when submitting results.
 
 ## Data Overview
 
-The iWildCam 2022 WCS training set contains 201,399 images from 323 locations, and the WCS test set contains 60029 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger, and after motion is detected the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `sequence_id` for each sequence, and your task is to count the number of individuals across each test sequence.
+The iWildCam 2022 WCS training set contains 201,399 images from 323 locations, and the WCS test set contains 60029 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger and, after motion is detected, the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `seq_id` for each sequence, and your task is to count the number of individuals across each test sequence.
 
 We provide GPS locations for the majority of the camera traps, obfuscated within 1km for security and privacy reasons. Some of the obfuscated GPS locations (all from one country) were not released at the request of WCS, but knowing that the locations not listed in the `metadata/gps_locations.json` file are all from the same country should help competitors narrow down the set of possible species for those locations based on what is seen in the training data.
 
@@ -55,7 +55,7 @@ We provide Landsat-8 multispectral imagery for each camera location as supplemen
 
 ## Evaluation
 
-Submissions will be evaluated using Mean Absolute Error (MAE),
+Submissions will be evaluated using [Mean Absolute Error (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error),
 
 <!--
 $$ MAE = \frac{1}{n} \sum_{i=1}^n |x_i - y_i| $$
@@ -63,7 +63,7 @@ $$ MAE = \frac{1}{n} \sum_{i=1}^n |x_i - y_i| $$
 
 ![MAE](/assets/MAE.png)
 
-where each `x_i` represents the predicted count of animals in sequence `i`, `y_i` represents the ground truth count for that sequence and `n` is the number of sequences in the test set.
+where each `x_i` represents the predicted count of animals in sequence `i`, `y_i` represents the ground truth count for that sequence, and `n` is the number of sequences in the test set.
 
 We selected this simple metric for this year because it's easy to interpret and because count errors on large groups of animals (which will inevitably happen!) are not as hardly penalized as in the case of [Root Mean Square Error (RMSE)](https://en.wikipedia.org/wiki/Root-mean-square_error).
 
@@ -97,7 +97,7 @@ By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist
 * WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
   * [Download Link](FIXME)
     * Running `md5sum metadata.zip` should produce `FIXME`
-* DeepMAC segmentation masks on Megadetector v4 detections
+* DeepMAC segmentation masks on MegaDetector v4 detections (FIXME GB zipped)
   * [Download Link](FIXME)
     * Running `md5sum instance_masks.zip` should produce `FIXME`
 * iWildCam Remote Sensing Data (37GB zipped)
@@ -158,11 +158,11 @@ annotation {
 
 ## Camera Trap Animal Detection Model
 
-We allow the use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md) (described in [this paper](https://arxiv.org/abs/1907.06772)), a general and robust camera trap detection model which competitors are free to use as they see fit. Megadetector v3 detects `animal` and `person` classes, while the MegaDetector v4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded from [here](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#downloading-the-model).
+We allow the use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md) (described in [this paper](https://arxiv.org/abs/1907.06772)), a general and robust camera trap detection model which competitors are free to use as they see fit. MegaDetector v3 detects `animal` and `person` classes, while the MegaDetector v4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded from [here](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#downloading-the-model).
 
 Sample code for running the MegaDetector over a folder of images can be found [here](https://github.com/microsoft/CameraTraps/blob/main/detection/run_tf_detector_batch.py).
 
-We have run MegaDetector v4 over the WCS dataset, and provide the top bounding boxes and associated confidences along with the metadata. Detections are provided in the following format:
+We have run MegaDetector v4 over the WCS dataset, and we are providing the top bounding boxes and associated confidences along with the metadata. Detections are given in the following format:
 
 ```txt
 {
@@ -251,7 +251,7 @@ Sometimes the camera malfunctions, causing strange discolorations.
 
 ### Temporal Changes
 
-At any given location, the background changes over time as the seasons change. Below, you can see a single loction at three different points in time.
+At any given location, the background changes over time as the seasons change. Below, you can see a single location at three different points in time.
 
 <img alt="temporal changes" src="/assets/changesovertime.png" width="1200">
 
