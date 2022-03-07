@@ -45,9 +45,9 @@ Participants are allowed to collect additional annotations (e.g. bounding boxes,
 
 ## Data Overview
 
-The iWildCam 2022 WCS training set contains FIXME images from FIXME locations, and the WCS test set contains FIXME images from FIXME locations. These FIXME locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger, and after motion is detected the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `sequence_id` for each sequence, and your task is to count the number of individuals across each test sequence.
+The iWildCam 2022 WCS training set contains 201,399 images from 323 locations, and the WCS test set contains 60029 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger, and after motion is detected the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `sequence_id` for each sequence, and your task is to count the number of individuals across each test sequence.
 
-We provide GPS locations for the majority of the camera traps, obfuscated within 1km for security and privacy reasons. Some of the obfuscated GPS locations (all from one country) were not released at the request of WCS, but knowing that the locations not listed in the `gps_locations.json` file are all from the same country should help competitors narrow down the set of possible species for those locations based on what is seen in the training data.
+We provide GPS locations for the majority of the camera traps, obfuscated within 1km for security and privacy reasons. Some of the obfuscated GPS locations (all from one country) were not released at the request of WCS, but knowing that the locations not listed in the `metadata/gps_locations.json` file are all from the same country should help competitors narrow down the set of possible species for those locations based on what is seen in the training data.
 
 You may also choose to use supplemental training data from the iNaturalist 2017, iNaturalist 2018, iNaturalist 2019, and iNaturalist 2021 competition datasets. As a courtesy, we have curated all the images from iNaturalist 2017-2018 datasets containing classes that might be in the test set, and mapped them into the iWildCam categories.
 
@@ -94,9 +94,12 @@ By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist
 * WCS test images (FIXME GB zipped)
   * [Download Link](FIXME)
     * Running `md5sum test.zip` should produce `FIXME`
-* WCS annotations and obfuscated GPS coordinates, MegaDetector v4 detections and DeepMAC segmentation masks
+* WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
   * [Download Link](FIXME)
     * Running `md5sum metadata.zip` should produce `FIXME`
+* DeepMAC segmentation masks on Megadetector v4 detections
+  * [Download Link](FIXME)
+    * Running `md5sum instance_masks.zip` should produce `FIXME`
 * iWildCam Remote Sensing Data (37GB zipped)
   * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
     * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -191,7 +194,7 @@ We are also providing a general weakly-supervised segmentation model which compe
 
 ### Format Details
 
-We provide an instance mask for each detected object by MegaDetector (which is stored in `metadata/iwildcam2022_megadetector_results.json`). For each image in the `train` or `test` direcotry with name `<ID>.jpg`, if there are any objects detected in the image, its corresponding instance masks will be stored in the `instance_masks/<ID>.png`. The instance mask details are stored in a single channel PNG image. The pixels in the PNG image are 1-indexed and indicate which detection they belong to (`0` is reserved for background). The indices follow the same order as the detections in MegaDetector's output (addressed by `['images']['detections']`). When there are overlapping instances, we only preserve the ID of the instance with the higher detection confidence (`'conf'` field).
+We provide an instance mask for each detected object by MegaDetector (detected objects are stored in `metadata/iwildcam2022_mdv4_detections.json`). For each image in the `train` or `test` directory with name `<ID>.jpg`, if there are any objects detected in the image, its corresponding instance masks will be stored in the `instance_masks/<ID>.png`. The instance mask details are stored in a single channel PNG image. The pixels in the PNG image are 1-indexed and indicate which detection they belong to (`0` is reserved for background). The indices follow the same order as the detections in MegaDetector's output (addressed by `['images']['detections']`). When there are overlapping instances, we only preserve the ID of the instance with the higher detection confidence (`'conf'` field).
 
 ### Other Useful links
 
