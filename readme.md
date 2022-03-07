@@ -88,12 +88,12 @@ By downloading the Wildlife Conservation Society data or the iWildCam Remote Sen
 
 By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist](https://www.inaturalist.org/pages/terms).
 
-* WCS training images (FIXME GB zipped)
+* WCS training images (84GB zipped)
   * [Download Link](FIXME)
-    * Running `md5sum train.zip` should produce `FIXME`
-* WCS test images (FIXME GB zipped)
+    * Running `md5sum train.zip` should produce `8c746de9ded99310832c5ab34438f9e5`
+* WCS test images (25GB zipped)
   * [Download Link](FIXME)
-    * Running `md5sum test.zip` should produce `FIXME`
+    * Running `md5sum test.zip` should produce `4c119e218545ea4374c65c7a2d0264b2`
 * WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
   * [Download Link](FIXME)
     * Running `md5sum metadata.zip` should produce `FIXME`
