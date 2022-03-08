@@ -118,9 +118,7 @@ By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist
 
 ## Metadata Format
 
-The metadata we provide follows the [COCO CameraTraps annotation format](https://github.com/Microsoft/CameraTraps/blob/main/data_management/README.md#coco-camera-traps-format), with additional fields. Each training image has at least one associated annotation, containing a `category_id` that maps the annotation to its corresponding category label. This year we are also providing count labels on a portion of the training data (FIXME sequences, with FIXME images in total).
-
-The annotations are stored in the [JSON format](https://www.json.org/) and are organized as follows:
+The metadata we provide follows the [COCO CameraTraps annotation format](https://github.com/Microsoft/CameraTraps/blob/main/data_management/README.md#coco-camera-traps-format), with additional fields. Each training image has at least one associated annotation, containing a `category_id` that maps the annotation to its corresponding category label. The annotations are stored in the [JSON format](https://www.json.org/) and are organized as follows:
 
 ```txt
 {
@@ -140,8 +138,7 @@ image {
   "datetime" : datetime,
   "seq_id" : str,
   "seq_num_frames" : int,
-  "frame_num" : int,
-  "FIXME" : int
+  "frame_num" : int
 }
 
 category {
@@ -155,6 +152,8 @@ annotation {
   "category_id" : int
 }
 ```
+
+This year we are also providing count labels on a portion of the training data (FIXME sequences, with FIXME images in total). FIXME: explain the format of the count annotations.
 
 ## Camera Trap Animal Detection Model
 
