@@ -30,7 +30,7 @@ iWildCam 2022 is hosted on Kaggle at [https://www.kaggle.com/c/iwildcam2022-fgvc
 
 | Date | Event |
 | - | - |
-| March 15, 2022 | Competition start date. |
+| Coming soon! | Competition start date. |
 | May 20, 2022 | Entry deadline. You must accept the competition rules before this date in order to compete. |
 | May 20, 2022 | Team merger deadline. This is the last day participants may join or merge teams. |
 | May 27, 2022 | Final submission deadline. |
