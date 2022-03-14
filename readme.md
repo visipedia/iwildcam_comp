@@ -96,7 +96,7 @@ By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist
     * Running `md5sum test.zip` should produce `4c119e218545ea4374c65c7a2d0264b2`
 * WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
   * [Download Link](FIXME)
-    * Running `md5sum metadata.zip` should produce `FIXME`
+    * Running `md5sum metadata.zip` should produce `4fdbfda1d1f909e5e3528a98e17f4629`
 * DeepMAC segmentation masks on MegaDetector v4 detections (FIXME GB zipped)
   * [Download Link](FIXME)
     * Running `md5sum instance_masks.zip` should produce `FIXME`
