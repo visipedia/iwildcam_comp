@@ -30,7 +30,7 @@ iWildCam 2022 is hosted on Kaggle at [https://www.kaggle.com/c/iwildcam2022-fgvc
 
 | Date | Event |
 | - | - |
-| March 14, 2022 | Competition start date. |
+| March 15, 2022 | Competition start date. |
 | May 20, 2022 | Entry deadline. You must accept the competition rules before this date in order to compete. |
 | May 20, 2022 | Team merger deadline. This is the last day participants may join or merge teams. |
 | May 27, 2022 | Final submission deadline. |
@@ -45,7 +45,9 @@ Participants are allowed to collect additional annotations (e.g. bounding boxes,
 
 ## Data Overview
 
-The iWildCam 2022 WCS training set contains 201,399 images from 323 locations, and the WCS test set contains 60029 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger and, after motion is detected, the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `seq_id` for each sequence, and your task is to count the number of individuals across each test sequence.
+The iWildCam 2022 WCS training set contains 201,399 images from 323 locations, and the WCS test set contains 60,029 images from 91 locations. These 414 locations are spread across the globe. A location ID (`location`) is given for each image, and in some special cases where two cameras were set up by ecologists at the same location, we have provided a `sub_location` identifier. Camera traps operate with a motion trigger and, after motion is detected, the camera will take a sequence of photos (from 1 to 10 images depending on the camera). We provide a `seq_id` for each sequence, and your task is to count the number of individuals across each test sequence.
+
+This year we are also providing count annotations on 1780 of the 36,292 train sequences (check the `metadata/train_sequence_counts.csv` file). We hope you will find them useful in building better models. We do not provide any count annotations for the test set.
 
 We provide GPS locations for the majority of the camera traps, obfuscated within 1km for security and privacy reasons. Some of the obfuscated GPS locations (all from one country) were not released at the request of WCS, but knowing that the locations not listed in the `metadata/gps_locations.json` file are all from the same country should help competitors narrow down the set of possible species for those locations based on what is seen in the training data.
 
@@ -82,38 +84,34 @@ The `Id` column corresponds to the test sequence id, while `Predicted` holds an 
 
 ## Data Downloads
 
-Below are the dataset files for this competition.
-
 By downloading the Wildlife Conservation Society data or the iWildCam Remote Sensing data, you agree to the terms in the [Community Data License Agreement (CDLA)](https://cdla.io/permissive-1-0/).
 
 By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist](https://www.inaturalist.org/pages/terms).
 
+Here are the dataset files for this competition:
+
 * WCS training images (84GB zipped)
-  * [Download Link](FIXME)
-    * Running `md5sum train.zip` should produce `8c746de9ded99310832c5ab34438f9e5`
+  * Download link coming soon! Until then, download train images from [Kaggle](https://www.kaggle.com/c/iwildcam2022-fgvc9/data?select=train).
 * WCS test images (25GB zipped)
-  * [Download Link](FIXME)
-    * Running `md5sum test.zip` should produce `4c119e218545ea4374c65c7a2d0264b2`
+  * Download link coming soon! Until then, download test images from [Kaggle](https://www.kaggle.com/c/iwildcam2022-fgvc9/data?select=test).
 * WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
-  * [Download Link](FIXME)
-    * Running `md5sum metadata.zip` should produce `4fdbfda1d1f909e5e3528a98e17f4629`
-* DeepMAC segmentation masks on MegaDetector v4 detections (FIXME GB zipped)
-  * [Download Link](FIXME)
-    * Running `md5sum instance_masks.zip` should produce `FIXME`
+  * Download link coming soon! Until then, download metadata from [Kaggle](https://www.kaggle.com/c/iwildcam2022-fgvc9/data?select=metadata).
+* DeepMAC segmentation masks on MegaDetector v4 detections
+  * Download link coming soon!
 * iWildCam Remote Sensing Data (37GB zipped)
-  * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/iwildcam_rs_npy.tar.gz)
     * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
 * iNaturalist 2017 subset of images from our classes (2.2GB zipped)
-  * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2017.tar.gz)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2017.tar.gz)
     * Running `md5sum inaturalist_2017.tar.gz` should produce `bf9f18c0bc0169c243a8958d3705a0b9`
 * iNaturalist 2017 subset metadata
-  * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2017_to_iwildcam_train.json)
     * Running `md5sum inaturalist_2017_to_iwildcam_train.json` should produce `8664e8f16596995aae3a612d56e6426d`
 * iNaturalist 2018 subset of images from our classes (1.5GB zipped)
-  * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2018.tar.gz)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/inaturalist_2018.tar.gz)
     * Running `md5sum inaturalist_2018.tar.gz` should produce `44c0d20abefb27ec1555bd451d4c8904`
 * iNaturalist 2018 subset metadata
-  * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2020/metadata/inaturalist_2018_to_iwildcam_train.json)
     * Running `md5sum inaturalist_2018_to_iwildcam_train.json` should produce `dcdc925a494cb0e58daf9201eb69f595`
 
 ## Metadata Format
@@ -153,8 +151,6 @@ annotation {
 }
 ```
 
-This year we are also providing count labels on a portion of the training data (FIXME sequences, with FIXME images in total). FIXME: explain the format of the count annotations.
-
 ## Camera Trap Animal Detection Model
 
 We allow the use of the [Microsoft AI for Earth MegaDetector](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md) (described in [this paper](https://arxiv.org/abs/1907.06772)), a general and robust camera trap detection model which competitors are free to use as they see fit. MegaDetector v3 detects `animal` and `person` classes, while the MegaDetector v4 adds a `vehicle` class. Any version of the MegaDetector is allowed to be used in this competition. The models can be downloaded from [here](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md#downloading-the-model).
@@ -185,15 +181,15 @@ detection {
 }
 ```
 
-## Class-agnostic Segmentation Model
+## Class-agnostic Segmentation Model (DeepMAC segmentations coming soon!)
 
-We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit. We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector v4, and provide the segmentation for each box. The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which provides class-agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks. Below, we show a sample visualization of instance masks on WCS.
+We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit. We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector v4, and provide the segmentation for each box (coming soon!). The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which provides class-agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks. Below, we show a sample visualization of instance masks on WCS.
 
 ![Instance Masks](/assets/mask_visualization.png)
 
 ### Format Details
 
-We provide an instance mask for each detected object by MegaDetector (detected objects are stored in `metadata/iwildcam2022_mdv4_detections.json`). For each image in the `train` or `test` directory with name `<ID>.jpg`, if there are any objects detected in the image, its corresponding instance masks will be stored in the `instance_masks/<ID>.png`. The instance mask details are stored in a single channel PNG image. The pixels in the PNG image are 1-indexed and indicate which detection they belong to (`0` is reserved for background). The indices follow the same order as the detections in MegaDetector's output (addressed by `['images']['detections']`). When there are overlapping instances, we only preserve the ID of the instance with the higher detection confidence (`'conf'` field).
+We provide an instance mask for each detected object by MegaDetector (detected objects are stored in `metadata/iwildcam2022_mdv4_detections.json`). For each image in the `train` or `test` directory with name `<ID>.jpg`, if there are any objects detected in the image, its corresponding instance masks will be stored in `instance_masks/<ID>.png`. The instance mask details are stored in a single channel PNG image. The pixels in the PNG image are 1-indexed and indicate which detection they belong to (`0` is reserved for background). The indices follow the same order as the detections in MegaDetector's output (addressed by `['images']['detections']`). When there are overlapping instances, we only preserve the ID of the instance with the higher detection confidence (`'conf'` field).
 
 ### Other Useful links
 
