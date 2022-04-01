@@ -99,8 +99,9 @@ Here are the dataset files for this competition:
 * WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
   * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-metadata.zip)
     * Running `md5sum iwildcam-2022-metadata.zip` should produce `4fdbfda1d1f909e5e3528a98e17f4629`
-* DeepMAC segmentation masks on MegaDetector v4 detections
-  * [Download link](coming soon!)
+* DeepMAC segmentation masks on MegaDetector v4 detections (514MB zipped)
+  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-instance-masks.zip)
+    * Running `md5sum iwildcam-2022-instance-masks.zip` should produce `0ae1f437a2e4372af0ccd5def2bf7796`
 * iWildCam Remote Sensing Data (37GB zipped)
   * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/iwildcam_rs_npy.tar.gz)
     * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
@@ -184,9 +185,9 @@ detection {
 }
 ```
 
-## Class-agnostic Segmentation Model (DeepMAC segmentations coming soon!)
+## Class-agnostic Segmentation Model
 
-We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit. We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector v4, and provide the segmentation for each box (coming soon!). The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which provides class-agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks. Below, we show a sample visualization of instance masks on WCS.
+We are also providing a general weakly-supervised segmentation model which competitors are free to use as they see fit. We have run the segmentation model over the WCS dataset using the bounding boxes from the MegaDetector v4, and provide the segmentation for each box. The segmentations come from [DeepMAC](https://google.github.io/deepmac/), which provides class-agnostic instance segmentation masks and achieves state-of-the-art performance on partially supervised instance segmentation tasks. Below, we show a sample visualization of instance masks on WCS.
 
 ![Instance Masks](/assets/mask_visualization.png)
 
@@ -196,7 +197,7 @@ We provide an instance mask for each detected object by MegaDetector (detected o
 
 ### Other Useful links
 
-* [Kaggle notebook](https://www.kaggle.com/vighneshbgoogle/iwildcam-visualize-instance-masks) for visualizing iWildCam instance masks.
+* [Kaggle notebook](https://www.kaggle.com/stefanistrate/iwildcam-2022-visualize-deepmac-instance-masks) for visualizing iWildCam instance masks.
 * [DeepMAC paper](https://arxiv.org/abs/2104.00613).
 * [DeepMAC trained model](http://download.tensorflow.org/models/object_detection/tf2/20210329/deepmac_1024x1024_coco17.tar.gz) in TF saved model format (trained on COCO).
 * [Colab notebook](https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/deepmac_colab.ipynb) for using DeepMAC trained model on user-specified boxes.
