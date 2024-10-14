@@ -118,7 +118,9 @@ id,animal_class
 The `id` column corresponds to the test image id. The `animal_class` is an integer value that indicates the class of the animal, or `0` to represent the absence of an animal.
 
 ## Data
-Download the dataset files here:
+The original competition dataset files are unfortunately no longer accessible. Please see the [iWildCam 2022 page on lila.science](https://lila.science/datasets/iwildcam-2022/) for iWildCam 2022 competition download links.
+
+The original dataset files were once accessible here:
   * CCT images and annotations 87GB zipped
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2019/iWildCam_2019_CCT.tar.gz)
       * Running `md5sum iWildCam_2019_CCT.tar.gz` should produce `21323ae381653240ff21768658cc44df`

@@ -98,7 +98,9 @@ Id,Predicted2,Predicted3,[...],Predicted571
 The `Id` column corresponds to the test sequence id. `Predicted2` holds an integer value that indicates the number of individuals of species 2 in each test sequence. If you predict there are no animals in the sequence, the entire row after the sequence ID should be populated with `0` values.
 
 ## Data
-Download the dataset files here:
+The original competition dataset files are unfortunately no longer accessible. Please see the [iWildCam 2022 page on lila.science](https://lila.science/datasets/iwildcam-2022/) for iWildCam 2022 competition download links.
+
+The original dataset files were once accessible here:
   * WCS training images (84GB zipped)
     * [Download Link](https://lilablobssc.blob.core.windows.net/iwildcam2020/iwildcam2021/train.zip)
       * Running `md5sum train.zip` should produce `8c1c8e4bc699c16072ea0ff31ce7967a`
