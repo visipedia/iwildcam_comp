@@ -90,33 +90,7 @@ By downloading iNaturalist data, you agree to the terms outlined by [iNaturalist
 
 Here are the dataset files for this competition:
 
-* WCS training images (84GB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-train.zip)
-    * Running `md5sum iwildcam-2022-train.zip` should produce `8c746de9ded99310832c5ab34438f9e5`
-* WCS test images (25GB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-test.zip)
-    * Running `md5sum iwildcam-2022-test.zip` should produce `4c119e218545ea4374c65c7a2d0264b2`
-* WCS annotations, obfuscated GPS coordinates and MegaDetector v4 detections
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-metadata.zip)
-    * Running `md5sum iwildcam-2022-metadata.zip` should produce `4fdbfda1d1f909e5e3528a98e17f4629`
-* DeepMAC segmentation masks on MegaDetector v4 detections (514MB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam-2022-instance-masks.zip)
-    * Running `md5sum iwildcam-2022-instance-masks.zip` should produce `0ae1f437a2e4372af0ccd5def2bf7796`
-* iWildCam Remote Sensing Data (37GB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/iwildcam_rs_npy.tar.gz)
-    * Running `md5sum iwildcam_rs_npy.tar.gz` should produce `f25fbd47535a01139b0ef7b33b964269`
-* iNaturalist 2017 subset of images from our classes (2.2GB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/inaturalist_2017.tar.gz)
-    * Running `md5sum inaturalist_2017.tar.gz` should produce `bf9f18c0bc0169c243a8958d3705a0b9`
-* iNaturalist 2017 subset metadata
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/inaturalist_2017_to_iwildcam_train.json)
-    * Running `md5sum inaturalist_2017_to_iwildcam_train.json` should produce `8664e8f16596995aae3a612d56e6426d`
-* iNaturalist 2018 subset of images from our classes (1.5GB zipped)
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/inaturalist_2018.tar.gz)
-    * Running `md5sum inaturalist_2018.tar.gz` should produce `44c0d20abefb27ec1555bd451d4c8904`
-* iNaturalist 2018 subset metadata
-  * [Download link](https://lilablobssc.blob.core.windows.net/iwildcam/iwildcam2020/inaturalist_2018_to_iwildcam_train.json)
-    * Running `md5sum inaturalist_2018_to_iwildcam_train.json` should produce `dcdc925a494cb0e58daf9201eb69f595`
+Please see the [iWildCam 2022 page on lila.science](https://lila.science/datasets/iwildcam-2022/) for download links.
 
 ## Metadata Format
 
